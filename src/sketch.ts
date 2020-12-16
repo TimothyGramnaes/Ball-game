@@ -25,6 +25,7 @@ function setup() {
 //     // noCursor();
     
     game = new TheGame();
+
 }
 
 // /**

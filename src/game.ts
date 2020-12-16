@@ -11,6 +11,7 @@ class TheGame {
     constructor() {
         this.isGameRunning = false;
         this.startScreen = new StartScreen(this.startGame)
+        this.paddle = new Paddle()
         this.gameOver = false;
         console.log(this.isGameRunning)
     }
@@ -32,7 +33,9 @@ class TheGame {
         } else {
             this.startScreen.draw();
         }
+        this.paddle.draw()
     }
+    
 }
 
 
