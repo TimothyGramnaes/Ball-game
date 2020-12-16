@@ -7,12 +7,14 @@ class TheGame {
     private goal: Goal;
     private isGameRunning: boolean;
     private gameOver: boolean;
+    private walls: Walls;
     
     constructor() {
         this.isGameRunning = false;
         this.startScreen = new StartScreen(this.startGame)
         this.gameOver = false;
         console.log(this.isGameRunning)
+        this.walls = new Walls()
     }
 
     private startGame() {
@@ -25,13 +27,15 @@ class TheGame {
     }
 
     public draw() {
-        if (this.isGameRunning) {
-            fill(255)
-            circle(100, 100, 60)
-            console.log(this.isGameRunning)
-        } else {
-            this.startScreen.draw();
-        }
+        // if (this.isGameRunning) {
+        //     fill(255)
+        //     circle(100, 100, 60)
+        //     console.log(this.isGameRunning)
+        // } else {
+        //     this.startScreen.draw();
+        // }
+        this.walls.draw();
+        
     }
 }
 
