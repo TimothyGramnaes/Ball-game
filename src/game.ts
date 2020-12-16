@@ -13,6 +13,7 @@ class TheGame {
         this.isGameRunning = false;
         this.startScreen = new StartScreen(this.startGame)
         this.gameOver = false;
+        this.ball = new Ball()
         console.log(this.isGameRunning)
         this.walls = new Walls()
     }
@@ -27,15 +28,17 @@ class TheGame {
     }
 
     public draw() {
-        // if (this.isGameRunning) {
-        //     fill(255)
-        //     circle(100, 100, 60)
-        //     console.log(this.isGameRunning)
-        // } else {
-        //     this.startScreen.draw();
-        // }
         this.walls.draw();
-        
+       
+        if (this.isGameRunning) {
+            fill(255)
+            circle(100, 100, 60)
+            console.log(this.isGameRunning)
+        } else {
+            this.startScreen.draw();
+        }
+      
+        this.ball.draw()
     }
 }
 
