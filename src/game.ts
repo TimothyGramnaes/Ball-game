@@ -12,6 +12,7 @@ class TheGame {
         this.isGameRunning = false;
         this.startScreen = new StartScreen(this.startGame)
         this.gameOver = false;
+        this.ball = new Ball()
         console.log(this.isGameRunning)
     }
 
@@ -32,6 +33,7 @@ class TheGame {
         } else {
             this.startScreen.draw();
         }
+        this.ball.draw()
     }
 }
 

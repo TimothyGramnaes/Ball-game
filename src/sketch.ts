@@ -33,7 +33,7 @@ function setup() {
 //  * you created in the setup function above
 //  */
 function draw() {
-//     background('blue');
+    background('blue');
 //     fill('green');
 //     stroke('white');
 //     strokeWeight(10);
