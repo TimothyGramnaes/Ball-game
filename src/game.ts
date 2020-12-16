@@ -7,6 +7,7 @@ class TheGame {
     private goal: Goal;
     private isGameRunning: boolean;
     private gameOver: boolean;
+    private walls: Walls;
     
     constructor() {
         this.isGameRunning = false;
@@ -14,6 +15,7 @@ class TheGame {
         this.gameOver = false;
         this.ball = new Ball()
         console.log(this.isGameRunning)
+        this.walls = new Walls()
     }
 
     private startGame() {
@@ -26,6 +28,8 @@ class TheGame {
     }
 
     public draw() {
+        this.walls.draw();
+       
         if (this.isGameRunning) {
             fill(255)
             circle(100, 100, 60)
@@ -33,6 +37,7 @@ class TheGame {
         } else {
             this.startScreen.draw();
         }
+      
         this.ball.draw()
     }
 }
