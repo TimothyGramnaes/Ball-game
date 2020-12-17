@@ -10,8 +10,6 @@ class Ball {
     ball: any
     radius: any
     position: any
-    // positionX: number
-    // positionY: number
     color: number
     speed: number
     velocity: any
