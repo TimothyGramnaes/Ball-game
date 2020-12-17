@@ -25,9 +25,8 @@ class TheGame {
     }
 
     public draw() {
-        this.goal.draw();
-        console.log('test')
-
+        this.goal.draw();       
+        drawSprites();
     } 
 }
 

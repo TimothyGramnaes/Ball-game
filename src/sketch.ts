@@ -3,6 +3,7 @@ let game: TheGame;
 let snowBall: p5.Image; 
 
 
+
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
