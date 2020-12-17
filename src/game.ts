@@ -25,20 +25,30 @@ class TheGame {
 
     public update() {
         this.startScreen.update();
+        this.ball.update()
     }
-
+    
     public draw() {
         this.walls.draw();
        
-        if (this.isGameRunning) {
-            fill(255)
-            circle(100, 100, 60)
-            console.log(this.isGameRunning)
-        } else {
-            this.startScreen.draw();
-        }
+        // if (this.isGameRunning) {
+        //     fill(255)
+        //     circle(100, 100, 60)
+        //     console.log(this.isGameRunning)
+        // } else {
+        //     this.startScreen.draw();
+        // }
       
         this.ball.draw()
+       // this.ball.update()
+       // this.ball.bounceWalls()
+
+        // this.ball.bounce(this.walls);
+
+        // ball.bounce(wallTop);
+        // ball.bounce(wallBottom);
+        // ball.bounce(wallLeft);
+        // ball.bounce(wallRight);
     }
 }
 
