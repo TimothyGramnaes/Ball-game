@@ -1,18 +1,18 @@
 class TheGame {
     private startScreen: StartScreen;
-    private endScreen: EndScreen;
-    private playField: Playfield;
-    private paddle: Paddle;
-    private ball: Ball; 
-    private goal: Goal;
+    // private endScreen: EndScreen;
+    // private playField: Playfield;
+    // private paddle: Paddle;
+    public ball: Ball; 
+    // private goal: Goal;
     private isGameRunning: boolean;
-    private gameOver: boolean;
+    // private gameOver: boolean;
     public walls: Walls;
     
     constructor() {
         this.isGameRunning = false;
         this.startScreen = new StartScreen(this.startGame)
-        this.gameOver = false;
+        // this.gameOver = false;
         this.ball = new Ball()
         console.log(this.isGameRunning)
         this.walls = new Walls()
@@ -25,7 +25,13 @@ class TheGame {
 
     public update() {
         this.startScreen.update();
-      //  this.ball.update()
+        this.ball.update();
+        
+        this.ball.bounce(this.walls.leftWall);
+        this.ball.bounce(this.walls.topWall);
+        this.ball.bounce(this.walls.rightWall);
+        this.ball.bounce(this.walls.bottomWall);
+        // this.ball.bounce(this.goal.sprite)
     }
     
     public draw() {

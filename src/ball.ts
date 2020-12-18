@@ -3,42 +3,27 @@ class Ball {
     ball: any
     radius: any
     position: any
-    color: number
-    speed: number
-    walls: any
-   
+    // color: number
+    // speed: number
 
-    
-    // testings
-  //  private walls: Walls;
             
     constructor() {
-        // testings
-       // this.walls = new Walls()
-
-        this.walls = new Walls()
-
         this.radius = 30
         this.position = createVector(200, 200)
                 
         this.ball = createSprite(this.position.x, this.position.y, this.radius, this.radius);
-        this.ball.setCollider('circle', 0, 0, this.radius);
+        this.ball.setCollider('circle', 0, 0, this.radius / 2);
 
     
         let speed = 2
         this.ball.maxSpeed = speed; 
         this.ball.setSpeed(speed, -240)
-
-       // this.leftWall = this.walls.leftWall
-
-
-        
-
-      //  this.velocity = createVector(this.speed, -this.speed);
+        // this.velocity = createVector(this.speed, -this.speed);
        
     }
 
-    bounce() {
+    bounce(sprite: any) {
+        this.ball.bounce(sprite);
         // // Bounces the ball on left and right wall
         // if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
         //     this.maxSpeed.x *= -1;
@@ -47,22 +32,10 @@ class Ball {
         // if (this.position.y > height - (this.radius / 2) - 10 || this.position.y < (this.radius / 2) + 10) {
         //     this.maxSpeed.y *= -1;
         // }
-
-        // this.ball.bounce(topWall)
-        // this.ball.bounce(wallBottom)
-         this.ball.bounce(this.leftWall)
-        // this.ball.bounce(wallRight)
-
-
     }
    
-    public draw() { 
-        background(0);
-        drawSprites();
-        this.bounce();
-        this.update();
-
-      
+    public draw() {
+        drawSprite(this.ball);
     }
 
      public update() {

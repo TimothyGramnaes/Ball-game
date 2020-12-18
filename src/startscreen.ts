@@ -7,7 +7,7 @@ class StartScreen {
 
    
     public update() {
-        if (keyDown(32)) {
+        if (keyIsDown(32)) {
             this.startGameCallback(); 
         }
     }
