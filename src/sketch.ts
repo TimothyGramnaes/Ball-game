@@ -1,7 +1,7 @@
 // //---- GLOBAL VARIABLES ----//
 let game: any;
-let imageCorona: any
-let imageBall: any
+let imageCorona: p5.Image
+let imageBall: p5.Image
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as

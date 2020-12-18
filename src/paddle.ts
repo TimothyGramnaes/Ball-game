@@ -1,21 +1,28 @@
- 
-class Paddle {
+ class Paddle {
     paddle: sprite
-    ball: sprite
+    //ball: sprite
     positionX: number
     positionY: number
+    MAX_SPEED: number
     constructor() {
+        this.MAX_SPEED = 0.5;
         this.positionX = width / 2; 
         this.positionY = height / 2;
-        this.paddle = createSprite(this.positionX, this.positionY, 50, 50)
+        this.paddle = createSprite(this.positionX, this.positionY)
         this.paddle.setCollider('circle', 50, 50, 38)
         this.paddle.addImage(imageBall)
-        this.ball = createSprite(this.positionX, this.positionY - 30, 20, 20)
-        this.ball.setCollider('circle', 50, 50, 38)
-        this.ball.addImage(imageCorona)
-        this.paddle.immovable = true;
+        // this.ball = createSprite(this.positionX, this.positionY - 100)
+        // this.ball.setCollider('circle', 50, 50, 38)
+        // this.ball.maxSpeed = this.MAX_SPEED;
+        // this.setStartMovement()
+        // this.ball.addImage(imageCorona)
+        // this.paddle.immovable = true;
     }
     
+    // setStartMovement() {
+    //     this.ball.setSpeed(this.MAX_SPEED, 120)
+    // }
+
     draw() {
         background(0)
         this.move()
@@ -40,10 +47,18 @@ class Paddle {
             this.paddle.position.y += 4
         }
 
-        this.ball.position.x += 1
+        //this.ball.position.x += 1
+        //this.ball.setSpeed(1, 160)
     }
 
     bounce() {
-        this.ball.bounce(this.paddle)
+        //this.ball.bounce(this.paddle) //{
+        //     this.ball.scale -= 0.2
+        //     if(this.ball.scale < 0.2){
+        //         this.ball.scale = 0   
+        //     }
+        // }
     }
+
+   
 }
