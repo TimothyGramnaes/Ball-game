@@ -1,6 +1,7 @@
 // //---- GLOBAL VARIABLES ----//
 let game: any;
-
+let imageCorona: any
+let imageBall: any
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -9,7 +10,9 @@ let game: any;
  function preload() {
 //     // Tyvärr har jag inte fått till den globala typningen för
 //     // inladdningen av ljud men fungerar bra enligt nedan..
-//     // sound = (window as any).loadSound('../assets/mySound.wav');
+//     // sound = (window as any).loadSound('../assets/mySound.wav');   
+    imageCorona = loadImage('./sun.png')
+    imageBall = loadImage('./shot.png')
 }
 
 // /**

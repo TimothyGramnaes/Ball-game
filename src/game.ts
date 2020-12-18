@@ -23,6 +23,7 @@ class TheGame {
 
     public update() {
         this.startScreen.update();
+        this.paddle.update();
     }
 
     public draw() {
