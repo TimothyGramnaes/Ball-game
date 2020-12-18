@@ -33,13 +33,9 @@ function setup() {
 //  * you created in the setup function above
 //  */
 function draw() {
-    background('blue');
-//     fill('green');
-//     stroke('white');
-//     strokeWeight(10);
-//     circle(width * .5, height * .5, width * 0.2);
-game.update();
-game.draw();
+    background('pink');
+    game.update();
+    game.draw();
 }
 
 

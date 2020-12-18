@@ -20,7 +20,6 @@ class Walls {
         
     }
     public draw() {
-   
         drawSprite(this.topWall);
         drawSprite(this.rightWall);
         drawSprite(this.leftWall);

@@ -1,10 +1,10 @@
 class TheGame {
     private startScreen: StartScreen;
-    private endScreen: EndScreen;
-    private playField: Playfield;
-    private paddle: Paddle;
+    // private endScreen: EndScreen;
+    // private playField: Playfield;
+    // private paddle: Paddle;
     private ball: Ball; 
-    private goal: Goal;
+    // private goal: Goal;
     private isGameRunning: boolean;
     private gameOver: boolean;
     private walls: Walls;
@@ -25,6 +25,12 @@ class TheGame {
 
     public update() {
         this.startScreen.update();
+        this.ball.update();
+        
+        this.ball.bounce(this.walls.topWall);
+        this.ball.bounce(this.walls.rightWall);
+        this.ball.bounce(this.walls.bottomWall);
+        this.ball.bounce(this.walls.leftWall);
     }
 
     public draw() {
