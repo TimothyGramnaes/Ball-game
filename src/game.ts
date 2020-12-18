@@ -13,7 +13,7 @@ class TheGame {
         this.startScreen = new StartScreen(this.startGame)
 
         this.paddle = new Paddle()
-        this.gameOver = false;
+        //this.gameOver = false;
         
 
         // this.gameOver = false;
@@ -32,18 +32,18 @@ class TheGame {
 
     public draw() {
 
-        if (this.isGameRunning) {
-            fill(255)
-            circle(100, 100, 60)
-        } else {
-            this.startScreen.draw();
-        }
+        // if (this.isGameRunning) {
+        //     fill(255)
+        //     circle(100, 100, 60)
+        // } else {
+        //     this.startScreen.draw();
+        // }
         this.paddle.draw()
-    }
-
         this.goal.draw();       
         drawSprites();
-    } 
+    }
 }
+
+        
 
 
