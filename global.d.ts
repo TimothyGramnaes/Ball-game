@@ -45,12 +45,12 @@ declare global {
     function createSprite(
         x: number,
         y: number,
-        width: number,
-        height: number
-    
+        width?: number,
+        height?: number
     ): any
 
-    function drawSprites(): any
+    function drawSprite(sprite: any): void
+    function drawSprites(group: any): void
 }
 
 

@@ -1,12 +1,10 @@
 // //---- GLOBAL VARIABLES ----//
 
+
 let imageCorona: p5.Image
 let imageBall: p5.Image
 let game: TheGame;
 let snowBall: p5.Image; 
-
-
-
 
 // /**
 //  * Built in preload function in P5
@@ -35,11 +33,10 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    frameRate(60);
-    //     // noCursor();
-    
+    frameRate(60);    
     game = new TheGame();
 
+    
 }
 
 // /**
@@ -48,9 +45,10 @@ function setup() {
 //  * you created in the setup function above
 //  */
 function draw() {
-    
+    background('blue'); 
     game.update();
     game.draw();
+
 
 }
 
