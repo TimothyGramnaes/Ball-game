@@ -10,7 +10,7 @@ let snowBall: p5.Image;
 //  * sound files, images etc...
 //  */
 function preload() {
-    snowBall = loadImage('./assets/images/ball.png');
+    snowBall = loadImage('./assets/images/ball.png'); //målet
     
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
