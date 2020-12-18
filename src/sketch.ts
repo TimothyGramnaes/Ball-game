@@ -1,6 +1,11 @@
 // //---- GLOBAL VARIABLES ----//
+
+let game: any;
+let imageCorona: p5.Image
+let imageBall: p5.Image
 let game: TheGame;
 let snowBall: p5.Image; 
+
 
 
 
@@ -9,12 +14,21 @@ let snowBall: p5.Image;
 //  * This is a good place to load assets such as
 //  * sound files, images etc...
 //  */
+
+ function preload() {
+//     // Tyvärr har jag inte fått till den globala typningen för
+//     // inladdningen av ljud men fungerar bra enligt nedan..
+//     // sound = (window as any).loadSound('../assets/mySound.wav');   
+    imageCorona = loadImage('./sun.png')
+    imageBall = loadImage('./shot.png')
+   
 function preload() {
     snowBall = loadImage('./assets/images/ball.png'); //målet
     
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
     //     // sound = (window as any).loadSound('../assets/mySound.wav');
+
 }
 
 
@@ -31,6 +45,7 @@ function setup() {
     //     // noCursor();
     
     game = new TheGame();
+
 }
 
 // /**
