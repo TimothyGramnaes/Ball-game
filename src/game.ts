@@ -7,7 +7,7 @@ class TheGame {
     private goal: Goal;
     private isGameRunning: boolean;
     private gameOver: boolean;
-    private walls: Walls;
+    public walls: Walls;
     
     constructor() {
         this.isGameRunning = false;
@@ -25,10 +25,11 @@ class TheGame {
 
     public update() {
         this.startScreen.update();
-        this.ball.update()
+      //  this.ball.update()
     }
     
     public draw() {
+        this.ball.draw();
         this.walls.draw();
        
         // if (this.isGameRunning) {
@@ -39,16 +40,6 @@ class TheGame {
         //     this.startScreen.draw();
         // }
       
-        this.ball.draw()
-       // this.ball.update()
-       // this.ball.bounceWalls()
-
-        // this.ball.bounce(this.walls);
-
-        // ball.bounce(wallTop);
-        // ball.bounce(wallBottom);
-        // ball.bounce(wallLeft);
-        // ball.bounce(wallRight);
     }
 }
 

@@ -1,62 +1,72 @@
 class Ball {
-
-    // private color = String;
-    // private width = Number;
-    // private height = Number;
-    // private speed = Number; 
-    // private sprite = any;
-    
-            
+        
     ball: any
     radius: any
     position: any
     color: number
     speed: number
-    velocity: any
+    walls: any
+   
+
+    
+    // testings
+  //  private walls: Walls;
             
     constructor() {
+        // testings
+       // this.walls = new Walls()
 
-        // var speed = 2; 
+        this.walls = new Walls()
 
-        // this.ball = createSprite(200, 200, 30, 30)
-        // this.color = 255;
-        // this.ball.maxSpeed = speed; 
-        // this.ball.setSpeed(speed, -240)
-
-        this.radius = 60
+        this.radius = 30
         this.position = createVector(200, 200)
+                
+        this.ball = createSprite(this.position.x, this.position.y, this.radius, this.radius);
+        this.ball.setCollider('circle', 0, 0, this.radius);
 
- 
+    
+        let speed = 2
+        this.ball.maxSpeed = speed; 
+        this.ball.setSpeed(speed, -240)
 
-        this.color = 255
-        this.speed = 2
-        this.velocity = createVector(this.speed, -this.speed)
-        this.ball;
+       // this.leftWall = this.walls.leftWall
+
+
+        
+
+      //  this.velocity = createVector(this.speed, -this.speed);
+       
     }
 
     bounce() {
-        // Bounces the ball on left and right wall
-        if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
-            this.velocity.x *= -1;
-        } 
-        // Bounces the ball on the top and bottom wall
-        if (this.position.y > height - (this.radius / 2) - 10 || this.position.y < (this.radius / 2) + 10) {
-            this.velocity.y *= -1;
-        }
+        // // Bounces the ball on left and right wall
+        // if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
+        //     this.maxSpeed.x *= -1;
+        // } 
+        // // Bounces the ball on the top and bottom wall
+        // if (this.position.y > height - (this.radius / 2) - 10 || this.position.y < (this.radius / 2) + 10) {
+        //     this.maxSpeed.y *= -1;
+        // }
+
+        // this.ball.bounce(topWall)
+        // this.ball.bounce(wallBottom)
+         this.ball.bounce(this.leftWall)
+        // this.ball.bounce(wallRight)
 
 
     }
    
     public draw() { 
-        fill(this.color)
-        ellipse(this.position.x, this.position.y, this.radius, this.radius)
+        background(0);
+        drawSprites();
         this.bounce();
+        this.update();
 
       
     }
 
      public update() {
-        this.position.add(this.velocity);
+      //  this.position.add(this.velocity);
      }
 
     bounceWalls() {
