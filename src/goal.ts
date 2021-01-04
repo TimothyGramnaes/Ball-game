@@ -12,6 +12,7 @@ class Goal {
             this.goal = createSprite(this.positionX, this.positionY, 50, 50);
             this.goal.addImage(snowBall);
             this.goal.setSpeed(this.maxSpeed, 30);
+            this.goal.setCollider('circle', 0, 0, 100)
         }
 
         public shrink() {
