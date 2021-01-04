@@ -37,8 +37,22 @@ class TheGame {
         this.ball.bounce(this.walls.bottomWall);
         // this.ball.bounce(this.goal.sprite)
 
+        //Bounce ball and paddle
+        this.ball.bounce(this.paddle.paddle)
+
         this.paddle.update();
 
+        // Bounce goal with walls
+        this.goal.bounce(this.walls.leftWall);
+        this.goal.bounce(this.walls.topWall);
+        this.goal.bounce(this.walls.rightWall);
+        this.goal.bounce(this.walls.bottomWall);
+
+        // Bounce goal with ball 
+        this.goal.bounceShrink(this.ball.ball)
+
+        // Bounce paddle with walls 
+      
     }
     
     public draw() {

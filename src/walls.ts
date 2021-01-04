@@ -26,6 +26,7 @@ class Walls {
         drawSprite(this.leftWall);
         drawSprite(this.bottomWall);
     }
+    
 }
 
 
