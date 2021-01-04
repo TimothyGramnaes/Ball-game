@@ -12,11 +12,10 @@ class Ball {
         this.position = createVector(200, 200)
                 
         this.ball = createSprite(this.position.x, this.position.y, this.radius, this.radius);
-        this.ball.setCollider('circle', 0, 0, this.radius / 2);
-
+        this.ball.setCollider('circle', 0, 0, 40);
+        this.ball.addImage(imageBall)
     
-        let speed = 2
-        this.ball.maxSpeed = speed; 
+        let speed = 3
         this.ball.setSpeed(speed, -240)
         // this.velocity = createVector(this.speed, -this.speed);
        
