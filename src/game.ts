@@ -49,7 +49,7 @@ class TheGame {
         this.goal.bounce(this.walls.bottomWall);
 
         // Bounce goal with ball 
-        this.goal.bounceShrink(this.ball.ball, this.isGameRunning)
+        this.goal.bounceShrink(this.ball.ball)
 
         // Bounce paddle with walls 
 
