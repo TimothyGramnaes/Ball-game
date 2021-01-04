@@ -19,26 +19,28 @@
 
     draw() {
         background(0)
-        this.move()
+        // this.move()
+        this.paddle.position.x = mouseX;
+        this.paddle.position.y = mouseY;
         drawSprite(this.paddle)
     }
 
     
     update() {}
 
-    move() {
-        if(keyIsDown(39)){
-            this.paddle.position.x += 4
-        }
-        if(keyIsDown(37)){
-            this.paddle.position.x -= 4
-        }
-        if(keyIsDown(38)){
-            this.paddle.position.y -= 4
-        }
-        if(keyIsDown(40)){
-            this.paddle.position.y += 4
+    // move() {
+    //     if(keyIsDown(39)){
+    //         this.paddle.position.x += 4
+    //     }
+    //     if(keyIsDown(37)){
+    //         this.paddle.position.x -= 4
+    //     }
+    //     if(keyIsDown(38)){
+    //         this.paddle.position.y -= 4
+    //     }
+    //     if(keyIsDown(40)){
+    //         this.paddle.position.y += 4
     
-        }
-    }  
+    //     }
+    // }  
 }
