@@ -38,6 +38,7 @@
         }
         if(keyIsDown(40)){
             this.paddle.position.y += 4
+    
         }
     }  
 }

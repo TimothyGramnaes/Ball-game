@@ -21,11 +21,12 @@ class Goal {
         this.goal.bounce(sprite)
     }
     
-    bounceShrink(sprite: any) {
+    bounceShrink(sprite: any, isGameRunning: boolean) {
         if(this.goal.bounce(sprite)){
             this.goal.scale -= 0.2
             if(this.goal.scale < 0.2){
                 this.goal.scale = 0
+                isGameRunning = false;
             }
         }
     }
