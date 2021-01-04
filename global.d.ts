@@ -50,7 +50,7 @@ declare global {
     ): any
 
     function drawSprite(sprite: any): void
-    function drawSprites(group: any): void
+    function drawSprites(): void
 }
 
 
