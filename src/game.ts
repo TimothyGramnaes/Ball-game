@@ -3,7 +3,7 @@ class TheGame {
     // private endScreen: EndScreen;
     // private playField: Playfield;
     private paddle: Paddle;
-    public ball: Ball; 
+    private ball: Ball; 
     private goal: Goal;
     private isGameRunning: boolean;
     // private gameOver: boolean;
@@ -52,7 +52,7 @@ class TheGame {
         this.goal.bounceShrink(this.ball.ball)
 
         // Bounce paddle with walls 
-      
+
     }
     
     public draw() {

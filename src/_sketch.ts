@@ -1,8 +1,9 @@
 // //---- GLOBAL VARIABLES ----//
 
 
-let imageCorona: p5.Image
-let imageBall: p5.Image
+let imageCorona: p5.Image;
+let imageBall: p5.Image;
+let imagePaddle: p5.Image;
 let game: TheGame;
 let snowBall: p5.Image; 
 
@@ -15,8 +16,8 @@ let snowBall: p5.Image;
   
 function preload() {
     snowBall = loadImage('./assets/images/ball.png'); //målet
-    imageCorona = loadImage('./sun.png')
-    imageBall = loadImage('./shot.png')
+    imageBall = loadImage('./assets/images/sun.png')
+    imagePaddle = loadImage('./assets/images/moon.png')
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
     //     // sound = (window as any).loadSound('../assets/mySound.wav');

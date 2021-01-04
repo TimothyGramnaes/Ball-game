@@ -10,7 +10,7 @@
         this.positionY = height / 2;
         this.paddle = createSprite(this.positionX, this.positionY)
         this.paddle.setCollider('circle', 0, 0, 38)
-        this.paddle.addImage(imageBall)
+        this.paddle.addImage(imagePaddle)
         
         this.paddle.immovable = true;
     }
@@ -38,6 +38,7 @@
         }
         if(keyIsDown(40)){
             this.paddle.position.y += 4
+    
         }
     }  
 }
