@@ -6,7 +6,10 @@ let imageBall: p5.Image;
 let imagePaddle: p5.Image;
 let game: TheGame;
 let snowBall: p5.Image; 
+let isGameRunning: boolean;
 
+let gameOver: boolean;
+let gameIsOver: boolean;
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -36,8 +39,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     frameRate(60);    
     game = new TheGame();
-
-    
+    textSize(40)
 }
 
 // /**

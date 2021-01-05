@@ -25,7 +25,7 @@ class Goal {
         if(this.goal.bounce(sprite)){
             this.goal.scale -= 0.2
             if(this.goal.scale < 0.2){
-                this.goal.scale = 0
+                 gameIsOver = true;
             }
         }
     }
@@ -38,9 +38,8 @@ class Goal {
     
     
     public draw() {
-        drawSprites();
-        background(0);
-       
+        //drawSprites();
+        background(0); 
     }
 }
 

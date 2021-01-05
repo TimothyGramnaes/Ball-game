@@ -4,7 +4,7 @@ class Ball {
     radius: any
     position: any
     // color: number
-    // speed: number
+    speed: number
 
             
     constructor() {
@@ -15,14 +15,14 @@ class Ball {
         this.ball.setCollider('circle', 0, 0, 40);
         this.ball.addImage(imageBall)
     
-        let speed = 3
-        this.ball.setSpeed(speed, -240)
+        this.speed = 5
+        this.ball.setSpeed(this.speed, -240)
         // this.velocity = createVector(this.speed, -this.speed);
        
     }
 
     bounce(sprite: any) {
-        this.ball.bounce(sprite);
+        this.ball.bounce(sprite)
         // // Bounces the ball on left and right wall
         // if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
         //     this.maxSpeed.x *= -1;

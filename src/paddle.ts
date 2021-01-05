@@ -3,9 +3,9 @@
     //ball: sprite
     positionX: number
     positionY: number
-    MAX_SPEED: number
+    //MAX_SPEED: number
     constructor() {
-        this.MAX_SPEED = 0.5;
+        //this.MAX_SPEED = 0.5;
         this.positionX = width / 2; 
         this.positionY = height / 2;
         this.paddle = createSprite(this.positionX, this.positionY)

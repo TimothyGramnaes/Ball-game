@@ -1,19 +1,22 @@
+
 class TheGame {
     private startScreen: StartScreen;
-    // private endScreen: EndScreen;
+    private endScreen: EndScreen;
     // private playField: Playfield;
     private paddle: Paddle;
     private ball: Ball; 
     private goal: Goal;
-    private isGameRunning: boolean;
-    // private gameOver: boolean;
+    //private isGameRunning: boolean;
+    //private gameOver: boolean;
     public walls: Walls;
-    
     constructor() {
-        this.isGameRunning = false;
+        isGameRunning = false
         this.startScreen = new StartScreen(this.startGame)
 
-        // this.gameOver = false;
+        gameOver = false; 
+        this.endScreen = new EndScreen(this.endGame)
+        
+    
         this.ball = new Ball()
         this.walls = new Walls()
 
@@ -22,13 +25,19 @@ class TheGame {
     }
 
     private startGame() {
-        this.isGameRunning = true;
-        console.log(this.isGameRunning)
+        isGameRunning = true;
+        console.log(isGameRunning)
+    }
+
+    private endGame() {
+        gameOver = true;
+        console.log(gameOver)
     }
 
     public update() {
-        this.startScreen.update();
 
+        this.startScreen.update();
+        this.endScreen.update();
         this.ball.update();
         
         this.ball.bounce(this.walls.leftWall);
@@ -56,20 +65,21 @@ class TheGame {
     }
     
     public draw() {
-        this.ball.draw();
-        this.walls.draw();
-       
-        // if (this.isGameRunning) {
-        //     fill(255)
-        //     circle(100, 100, 60)
-        //     console.log(this.isGameRunning)
-        // } else {
-        //     this.startScreen.draw();
-        // }
-      
-        this.paddle.draw()
-        this.goal.draw();       
-        drawSprites();
+
+        if (isGameRunning) {
+            background(0)
+            this.ball.draw();
+            this.walls.draw();
+            this.paddle.draw()
+            this.goal.draw(); 
+            drawSprites()
+        } else{
+            this.startScreen.draw();
+        }
+        
+        if(gameOver) {
+           this.endScreen.draw();
+        }
     }
 }
 
