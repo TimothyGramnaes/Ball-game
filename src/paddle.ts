@@ -20,7 +20,7 @@
     draw() {
         background(0)
         this.move()
-        drawSprite(this.paddle)
+        //drawSprite(this.paddle)
     }
 
     

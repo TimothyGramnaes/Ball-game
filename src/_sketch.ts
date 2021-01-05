@@ -6,7 +6,9 @@ let imageBall: p5.Image;
 let imagePaddle: p5.Image;
 let game: TheGame;
 let snowBall: p5.Image; 
+
 let isGameRunning: boolean;
+
 
 let gameOver: boolean;
 let gameIsOver: boolean;
@@ -21,6 +23,7 @@ function preload() {
     snowBall = loadImage('./assets/images/ball.png'); //målet
     imageBall = loadImage('./assets/images/sun.png')
     imagePaddle = loadImage('./assets/images/moon.png')
+  
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
     //     // sound = (window as any).loadSound('../assets/mySound.wav');
@@ -54,7 +57,6 @@ function draw() {
 
 
 }
-
 
 // /**
 //  *  Built in windowResize listener function in P5
