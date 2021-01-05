@@ -6,13 +6,10 @@ class Walls {
     leftWall: any
 
     constructor() {
-      
-
- 
-        this.topWall = createSprite(width / 2, 1, width, 10)
-        this.rightWall = createSprite(width - 1, height / 2 , 10, height)
-        this.bottomWall = createSprite(width / 2, height - 1, width, 10)
-        this.leftWall = createSprite(1 , height / 2, 10, height)
+        this.topWall = createSprite(width / 2, -50, width, 100)
+        this.rightWall = createSprite(width - 50, height / 2 , 100, height)
+        this.bottomWall = createSprite(width / 2, height -50, width, 100)
+        this.leftWall = createSprite(50 , height / 2, 100, height)
         this.topWall.immovable = true;   
         this.rightWall.immovable = true;
         this.leftWall.immovable = true;
