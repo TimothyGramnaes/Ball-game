@@ -29,7 +29,7 @@ class TheGame {
     }
 
     public update() {
-        
+        this.timer.update();
         this.startScreen.update();
 
         this.ball.update();
