@@ -50,6 +50,7 @@ class TheGame {
 
         // Bounce goal with ball 
         this.goal.bounceShrink(this.ball.ball)
+        this.goal.goalAccelerate(this.ball.ball)
 
         // Bounce paddle with walls 
 
