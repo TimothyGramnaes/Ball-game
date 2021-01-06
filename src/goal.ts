@@ -22,6 +22,7 @@ class Goal {
         this.goal.setSpeed(this.speed)
     }
     
+    // Shrinks the goal upon impact with the ball
     bounceShrink(sprite: any) {
         if(this.goal.bounce(sprite)){
             this.goal.scale -= 0.2
@@ -31,11 +32,15 @@ class Goal {
         }
     }
 
+    // Speeds up the goal upon impact with the ball
     goalAccelerate(sprite: any) {
         if(this.goal.bounce(sprite)) {
-            this.goal.setSpeed(this.speed += 2)
+            this.goal.setSpeed(this.speed += 3)
         }
     }
+
+    // The goal creates enemy balls upon impact with the ball
+    
     
 
     public setup() {
