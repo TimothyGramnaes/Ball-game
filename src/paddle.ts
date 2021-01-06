@@ -18,7 +18,6 @@
 
 
     draw() {
-        background(0)
         this.paddle.position.x = mouseX;
         this.paddle.position.y = mouseY;
         drawSprite(this.paddle)

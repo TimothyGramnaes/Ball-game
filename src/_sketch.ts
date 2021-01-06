@@ -6,13 +6,17 @@ let imageBall: p5.Image;
 let imagePaddle: p5.Image;
 let game: TheGame;
 let snowBall: p5.Image; 
-let backgroundImage: p5.Image;
-
+let topWall: p5.Image;
+let bottomWall: p5.Image;
+let leftWall: p5.Image;
+let rightWall: p5.Image;
 let isGameRunning: boolean;
 
 let restartGame: boolean;
 let gameOver: boolean;
 let gameIsOver: boolean;
+let startGameImg: p5.Image;
+let playAgain: p5.Image;
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -24,6 +28,14 @@ function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
+
+    topWall = loadImage('./assets/images/topwall.png')
+    bottomWall = loadImage('./assets/images/bottomwall.png')
+    leftWall = loadImage('./assets/images/leftwall.png')
+    rightWall = loadImage('./assets/images/rightwall.png')
+
+    startGameImg = loadImage('./assets/images/startthegame.png')
+    playAgain = loadImage('./assets/images/playagain.png')
 
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
@@ -52,9 +64,10 @@ function setup() {
 //  * you created in the setup function above
 //  */
 function draw() {
-    background('blue'); 
+    background("#f7ede2")
     game.update();
     game.draw();
+    
 
 
 }

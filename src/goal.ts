@@ -49,6 +49,7 @@ class Goal {
     }
 
     public draw() {
+        
         //drawSprites();
         //background(0);
     }

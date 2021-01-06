@@ -12,6 +12,7 @@ class TheGame {
     constructor() {
         isGameRunning = false
         this.startScreen = new StartScreen(this.startGame)
+        
 
         gameOver = false; 
         this.endScreen = new EndScreen(this.endGame, this.restartGame)
@@ -87,7 +88,7 @@ class TheGame {
         
     }
     public draw() {
-        background(0)
+        // background(0)
         this.paddle.draw()
         this.ball.draw()
         this.goal.draw()
@@ -95,6 +96,7 @@ class TheGame {
 
         if (isGameRunning === false) {
             this.startScreen.draw();
+
         } 
         
         if(gameOver) {
