@@ -69,7 +69,9 @@ class TheGame {
             // Bounce paddle with walls 
         }
         this.startScreen.update();
+
         this.endScreen.update();
+        
         if(restartGame) {
             gameOver = false;
             gameIsOver = false;

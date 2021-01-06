@@ -6,6 +6,7 @@ let imageBall: p5.Image;
 let imagePaddle: p5.Image;
 let game: TheGame;
 let snowBall: p5.Image; 
+let backgroundImage: p5.Image;
 
 let isGameRunning: boolean;
 
@@ -20,10 +21,10 @@ let gameIsOver: boolean;
 
   
 function preload() {
-    snowBall = loadImage('./assets/images/ball.png'); //målet
-    imageBall = loadImage('./assets/images/sun.png')
-    imagePaddle = loadImage('./assets/images/moon.png')
-  
+    snowBall = loadImage('./assets/images/goal.png'); //målet
+    imageBall = loadImage('./assets/images/ball.png')
+    imagePaddle = loadImage('./assets/images/paddle.png')
+
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
     //     // sound = (window as any).loadSound('../assets/mySound.wav');
