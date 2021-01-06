@@ -5,7 +5,9 @@ class Goal {
     speed: number
     positionX: number
     positionY: number
-        constructor() { 
+
+        constructor() {
+            this.speed = 5;
             this.positionX = width / 2;
             this.positionY = height / 2;
             this.goal = createSprite(this.positionX, this.positionY, 50, 50);
@@ -22,6 +24,7 @@ class Goal {
 
     bounce(sprite: any){
         this.goal.bounce(sprite)
+        this.goal.setSpeed(this.speed)
     }
     
     bounceShrink(sprite: any) {
@@ -33,6 +36,13 @@ class Goal {
             }
         }
     }
+
+    goalAccelerate(sprite: any) {
+        if(this.goal.bounce(sprite)) {
+            this.goal.setSpeed(this.speed += 2)
+        }
+    }
+    
 
     public setup() {
 

@@ -63,8 +63,9 @@ class TheGame {
             // Bounce paddle with walls 
         }
         this.startScreen.update();
+
         this.endScreen.update();
-     
+
 
     }
     
