@@ -8,7 +8,7 @@ class TheGame {
     private isGameRunning: boolean;
     // private gameOver: boolean;
     public walls: Walls;
-    public timer: Timer;
+    public counter: Counter;
     
     constructor() {
         this.isGameRunning = false;
@@ -20,7 +20,7 @@ class TheGame {
 
         this.paddle = new Paddle()        
         this.goal = new Goal();
-        this.timer = new Timer();
+        this.counter = new Counter();
     }
 
     private startGame() {
@@ -29,7 +29,7 @@ class TheGame {
     }
 
     public update() {
-        this.timer.update();
+        //this.counter.update();
         this.startScreen.update();
 
         this.ball.update();
@@ -74,7 +74,7 @@ class TheGame {
         this.paddle.draw()
         this.goal.draw();       
         drawSprites();
-        this.timer.draw();
+        this.counter.draw();
     }
 }
 
