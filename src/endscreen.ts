@@ -17,8 +17,8 @@ class EndScreen {
     }
 
     public draw() {
-        background(255)
-        fill(0)
+        //background(255)
+        fill(255)
         rect(width / 2, height / 2, 200, 100)
         text('Press ENTER to play again', 100, 100)
     }

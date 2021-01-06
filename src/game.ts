@@ -99,6 +99,7 @@ class TheGame {
         
         if(gameOver) {
            this.endScreen.draw();
+           this.ball.ball.setSpeed(0)
         }
     }
 }
