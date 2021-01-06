@@ -8,6 +8,11 @@ let game: TheGame;
 let snowBall: p5.Image; 
 let backgroundImage: p5.Image;
 
+let isGameRunning: boolean;
+
+let restartGame: boolean;
+let gameOver: boolean;
+let gameIsOver: boolean;
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -19,6 +24,7 @@ function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
+
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
     //     // sound = (window as any).loadSound('../assets/mySound.wav');
@@ -37,8 +43,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     frameRate(60);    
     game = new TheGame();
-
-    
+    textSize(40)
 }
 
 // /**
@@ -53,7 +58,6 @@ function draw() {
 
 
 }
-
 
 // /**
 //  *  Built in windowResize listener function in P5

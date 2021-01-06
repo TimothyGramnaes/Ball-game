@@ -3,9 +3,9 @@
     //ball: sprite
     positionX: number
     positionY: number
-    MAX_SPEED: number
+    //MAX_SPEED: number
     constructor() {
-        this.MAX_SPEED = 0.5;
+        //this.MAX_SPEED = 0.5;
         this.positionX = width / 2; 
         this.positionY = height / 2;
         this.paddle = createSprite(this.positionX, this.positionY)
@@ -19,7 +19,6 @@
 
     draw() {
         background(0)
-        // this.move()
         this.paddle.position.x = mouseX;
         this.paddle.position.y = mouseY;
         drawSprite(this.paddle)
@@ -28,19 +27,4 @@
     
     update() {}
 
-    // move() {
-    //     if(keyIsDown(39)){
-    //         this.paddle.position.x += 4
-    //     }
-    //     if(keyIsDown(37)){
-    //         this.paddle.position.x -= 4
-    //     }
-    //     if(keyIsDown(38)){
-    //         this.paddle.position.y -= 4
-    //     }
-    //     if(keyIsDown(40)){
-    //         this.paddle.position.y += 4
-    
-    //     }
-    // }  
 }

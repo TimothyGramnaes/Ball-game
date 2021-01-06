@@ -5,17 +5,23 @@ class Goal {
     speed: number
     positionX: number
     positionY: number
+
+
         constructor() {
             this.speed = 5;
             this.positionX = width / 2;
             this.positionY = height / 2;
             this.goal = createSprite(this.positionX, this.positionY, 50, 50);
-            this.goal.addImage(snowBall);
-            this.goal.setSpeed(this.speed, 30);
             this.goal.setCollider('circle', 0, 0, 105)
+            this.speed = 8;
+            this.goal.setSpeed(this.speed, 30);
+            this.goal.addImage(snowBall);
         }
 
     
+    setGoalStartSpeed() {
+        this.goal.setSpeed(this.speed);
+    }    
 
     bounce(sprite: any){
         this.goal.bounce(sprite)
@@ -25,8 +31,9 @@ class Goal {
     bounceShrink(sprite: any) {
         if(this.goal.bounce(sprite)){
             this.goal.scale -= 0.2
+            this.goal.setSpeed(3)
             if(this.goal.scale < 0.2){
-                this.goal.scale = 0
+                gameIsOver = true;
             }
         }
     }
@@ -39,16 +46,11 @@ class Goal {
     
 
     public setup() {
-
-
     }
 
-    
-    
     public draw() {
-        drawSprites();
-        background(0);
-       
+        //drawSprites();
+        //background(0);
     }
 }
 

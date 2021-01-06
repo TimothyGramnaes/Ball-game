@@ -1,14 +1,14 @@
 // This file will add both p5 instanced and global intellisence.
 // It makes sure that all the global p5 functions are available to typescript
 
-import p5 = require('p5');
+import module = require('p5');
 import * as p5Global from 'p5/global'
 
-export = p5;
+export = module;
 export as namespace p5;
 declare global {
     interface Window {
-        p5: typeof p5,
+        p5: typeof module,
     }
 
     /**
@@ -36,11 +36,11 @@ declare global {
      *   @return The p5.SoundFile object
      */
     function loadSound(
-        path: string | Array<string> | p5.File,
-        successCallback?: (sound: p5.SoundFile) => void,
+        path: string | Array<string> | module.File,
+        successCallback?: (sound: module.SoundFile) => void,
         failureCallback?: (erorr: Error) => void,
         whileLoading?: (percentageLoaded: number) => void
-    ): p5.SoundFile;
+    ): module.SoundFile;
     
     function createSprite(
         x: number,
