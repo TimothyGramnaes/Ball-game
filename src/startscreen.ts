@@ -13,7 +13,7 @@ class StartScreen {
     
     public update() {
         if (keyIsDown(32)) {
-            this.startGameCallback(); 
+            this.startGameCallback();
         }
     }
 

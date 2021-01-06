@@ -1,13 +1,18 @@
 class EndScreen {
-    private endGameCallback: Function
-    constructor(endGameCallback: Function) {
+    private endGameCallback: Function;
+    private restartGameCallback: Function;
+    constructor(endGameCallback: Function, restartGameCallback: any) {
         this.endGameCallback = endGameCallback;
+        this.restartGameCallback = restartGameCallback;
     }
 
    
     public update() {
         if(gameIsOver){
             this.endGameCallback()
+            if (keyIsDown(13)) {
+                this.restartGameCallback(); 
+            }
         } 
     }
 
@@ -15,6 +20,6 @@ class EndScreen {
         background(255)
         fill(0)
         rect(width / 2, height / 2, 200, 100)
-        text('Press space to play again', 100, 100)
+        text('Press ENTER to play again', 100, 100)
     }
 }  

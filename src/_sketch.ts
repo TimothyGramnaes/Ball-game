@@ -9,7 +9,7 @@ let snowBall: p5.Image;
 
 let isGameRunning: boolean;
 
-
+let restartGame: boolean;
 let gameOver: boolean;
 let gameIsOver: boolean;
 // /**

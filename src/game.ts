@@ -14,7 +14,9 @@ class TheGame {
         this.startScreen = new StartScreen(this.startGame)
 
         gameOver = false; 
-        this.endScreen = new EndScreen(this.endGame)
+        this.endScreen = new EndScreen(this.endGame, this.restartGame)
+
+        restartGame = false;
         
         this.ball = new Ball()
         this.walls = new Walls()
@@ -24,16 +26,20 @@ class TheGame {
 
     private startGame() {
         isGameRunning = true; 
+        restartGame = false;
     }
 
     private endGame() {
         gameOver = true;
     }
 
+    restartGame() {
+        restartGame = true;
+    }
     public update() {
         if(isGameRunning === false) {
-            //this.ball.speed = 0;
-            //this.goal.speed = 0;
+            this.ball.ball.setSpeed(0);
+            this.goal.goal.setSpeed(0);
         } else{
             this.ball.update();
             this.goal.setGoalStartSpeed();
@@ -64,10 +70,20 @@ class TheGame {
         }
         this.startScreen.update();
         this.endScreen.update();
-     
-
+        if(restartGame) {
+            gameOver = false;
+            gameIsOver = false;
+            isGameRunning = false;
+            this.resetGame();
+        }
     }
     
+    resetGame() {
+        this.goal.goal.scale = 1;
+        this.goal.goal.positionX = this.goal.positionX
+        this.goal.goal.positionY = this.goal.positionY
+        
+    }
     public draw() {
         background(0)
         this.paddle.draw()
