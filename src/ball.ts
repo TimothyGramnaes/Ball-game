@@ -12,7 +12,7 @@ class Ball {
         this.position = createVector(200, 200)
                 
         this.ball = createSprite(this.position.x, this.position.y, this.radius, this.radius);
-        this.ball.setCollider('circle', 0, 0, 40);
+        this.ball.setCollider('circle', 0, 0, 27); 
 
         this.ball.addImage(imageBall) 
         this.speed = 8;
