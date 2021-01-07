@@ -82,6 +82,7 @@ class TheGame {
             gameIsOver = false;
             isGameRunning = false;
             this.resetGame();
+            this.timer.startTimer();
         }
     }
     

@@ -11,6 +11,12 @@ class Timer {
         this.start = true;
     }
 
+    startTimer() {
+        if(this.start == false) {
+            (this.start = true)
+        }
+    }
+
     stopTimer() {
         if(this.start == true) {
             (this.start = false)
