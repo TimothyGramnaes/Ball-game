@@ -83,8 +83,11 @@ class TheGame {
     
     resetGame() {
         this.goal.goal.scale = 1;
-        this.goal.goal.positionX = this.goal.positionX
-        this.goal.goal.positionY = this.goal.positionY
+        this.goal.goal.position.x = this.goal.positionX
+        this.goal.goal.position.y = this.goal.positionY
+        
+        this.paddle.paddle.position.x = this.paddle.positionX
+        this.paddle.paddle.position.y = this.paddle.positionY
         
     }
     public draw() {
@@ -92,7 +95,8 @@ class TheGame {
         this.paddle.draw()
         this.ball.draw()
         this.goal.draw()
-        drawSprites()
+        this.walls.draw()
+        this.goal.draw();
 
         if (isGameRunning === false) {
             this.startScreen.draw();
