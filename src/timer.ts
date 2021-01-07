@@ -5,9 +5,9 @@ class Timer {
     start: boolean;
 
     constructor() {
-        this.millisecs = 0;
-        this.seconds = 0;
-        this.minutes = 0;
+        this.millisecs = int(0);
+        this.seconds = int(0);
+        this.minutes = int(0);
         this.start = true;
     }
 
