@@ -93,6 +93,15 @@ class TheGame {
         this.goal.draw()
         drawSprites()
 
+        // fill(255)
+        // ellipse(width / 1.04, 30, 30, 30) 
+        // if (keyPressed) {
+        //     backgroundMusic.play
+        // } if else {
+        //     backgroundMusic.stop
+        // }
+
+
         if (isGameRunning === false) {
             this.startScreen.draw();
         } 

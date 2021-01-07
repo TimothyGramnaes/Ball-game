@@ -2,6 +2,7 @@ class StartScreen {
     private startGameCallback: Function
     private text: string 
 
+
     constructor(startGameCallback: Function) {
         this.startGameCallback = startGameCallback;
         this.text = 'Please press SPACE to start the game'
@@ -15,6 +16,15 @@ class StartScreen {
         if (keyIsDown(32)) {
             this.startGameCallback();
         }
+    
+        if (keyIsDown(80)) {
+            // material icons volume_off
+            soundes.backgroundMusic.pause()
+        } 
+       
+
+
+    
     }
 
     public draw() {

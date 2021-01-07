@@ -53,8 +53,11 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-    soundes.backgroundMusic.play()
-    soundes.backgroundMusic.stop()
+
+    // volume_up volume_off material icons
+
+    soundes.backgroundMusic.play();
+    soundes.backgroundMusic.setVolume(0.1);
 }
 
 // /**
