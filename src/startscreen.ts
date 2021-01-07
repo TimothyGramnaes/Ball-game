@@ -12,9 +12,9 @@ class StartScreen {
 
     }
 
-    pause(speed:any){
-        speed = 0;
-    }
+    // pause(speed:any){
+    //     speed = 0;
+    // }
     
     public update() {
         if (keyIsDown(32)) {
