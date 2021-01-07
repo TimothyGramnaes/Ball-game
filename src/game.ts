@@ -69,7 +69,7 @@ class TheGame {
             // Bounce goal with ball 
 
             this.goal.ballCollision(this.ball.ball)
-            this.timer.draw()
+            //this.timer.draw()
     
             // Bounce paddle with walls 
         }
@@ -108,6 +108,9 @@ class TheGame {
             this.startScreen.draw();
 
         } 
+        if (isGameRunning === true) {
+            this.timer.draw();
+        }
         
         if(gameOver) {
            this.endScreen.draw();
