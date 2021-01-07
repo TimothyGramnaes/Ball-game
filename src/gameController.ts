@@ -35,6 +35,8 @@ class GameController {
             this.ball.bounce(this.walls.topWall);
             this.ball.bounce(this.walls.rightWall);
             this.ball.bounce(this.walls.bottomWall);
+            
+           
             // this.ball.bounce(this.goal.sprite)
     
             //Bounce ball and paddle

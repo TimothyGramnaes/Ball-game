@@ -33,9 +33,10 @@ class Ball {
 
     bounce(sprite: any) {
         this.ball.bounce(sprite)
-
         this.ball.setSpeed(this.speed)
-
+        if (this.ball.bounceWalls) {
+            sounds.wallCollide.play();
+        }
         // // Bounces the ball on left and right wall
         // if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
         //     this.maxSpeed.x *= -1;
@@ -46,10 +47,10 @@ class Ball {
         // }
     }
    
-
     public update() {
-      //  this.position.add(this.velocity);
-     }
+        
+    }
+ 
 
     bounceWalls() {
  
