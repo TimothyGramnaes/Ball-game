@@ -11,6 +11,12 @@ class Timer {
         this.start = true;
     }
 
+    stopTimer() {
+        if(this.start == true) {
+            (this.start = false)
+        }
+    }
+
     draw() {
         if(this.start){
             if (int(millis()/100)  % 10 != this.millisecs){

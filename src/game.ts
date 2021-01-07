@@ -118,6 +118,7 @@ class TheGame {
            this.goal.goal.setSpeed(0)
            this.ball.speed = 8
            this.goal.speed = 5
+           this.timer.stopTimer()
         }
         
     }
