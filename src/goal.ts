@@ -8,7 +8,6 @@ class Goal {
 
 
         constructor() {
-            this.speed = 5;
             this.positionX = width / 2;
             this.positionY = height / 2;
             this.goal = createSprite(this.positionX, this.positionY, 50, 50);
@@ -30,18 +29,30 @@ class Goal {
     
     bounceShrink(sprite: any) {
         if(this.goal.bounce(sprite)){
-            this.goal.scale -= 0.2
-            this.goal.setSpeed(3)
-            if(this.goal.scale < 0.2){
+            this.bounceSmaller();
+            this.goal.setSpeed(this.speed)
+            this.goalAccelerate(sprite);
+            this.createProjectiles();
+            if(this.goal.scale < 0.1){
                 gameIsOver = true;
             }
         }
     }
 
+    bounceSmaller(){
+        this.goal.scale -= 0.1
+    }
+
     goalAccelerate(sprite: any) {
         if(this.goal.bounce(sprite)) {
-            this.goal.setSpeed(this.speed += 2)
+            this.goal.setSpeed(this.speed += 1.2)
         }
+    }
+
+    createProjectiles() {
+        let projetile = createSprite(this.goal.position.x, this.goal.position.y, 50, 10)
+        projetile.setSpeed(3, Math.random() * 359)
+        //drawSprite(projetile)
     }
     
 

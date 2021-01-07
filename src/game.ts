@@ -26,16 +26,17 @@ class TheGame {
 
     private startGame() {
         isGameRunning = true; 
-        restartGame = false;
+        restartGame = false; 
     }
 
     private endGame() {
         gameOver = true;
     }
 
-    restartGame() {
+    private restartGame() {
         restartGame = true;
     }
+
     public update() {
         if(isGameRunning === false) {
             this.ball.ball.setSpeed(0);
@@ -65,7 +66,9 @@ class TheGame {
     
             // Bounce goal with ball 
             this.goal.bounceShrink(this.ball.ball)
-    
+            //this.goal.goalAccelerate(this.ball.ball)
+            
+
             // Bounce paddle with walls 
         }
         this.startScreen.update();
@@ -82,8 +85,10 @@ class TheGame {
     
     resetGame() {
         this.goal.goal.scale = 1;
-        this.goal.goal.positionX = this.goal.positionX
-        this.goal.goal.positionY = this.goal.positionY
+        this.goal.goal.position.x = this.goal.positionX;
+        this.goal.goal.position.y = this.goal.positionY;
+        this.ball.ball.position.x = 200;
+        this.ball.ball.position.y = 200;
         
     }
     public draw() {
@@ -100,6 +105,9 @@ class TheGame {
         if(gameOver) {
            this.endScreen.draw();
            this.ball.ball.setSpeed(0)
+           this.goal.goal.setSpeed(0)
+           this.ball.speed = 8
+           this.goal.speed = 8
         }
     }
 }

@@ -7,9 +7,6 @@ class StartScreen {
         this.text = 'Please press SPACE to start the game'
     }
 
-    pause(speed:any){
-        speed = 0;
-    }
     
     public update() {
         if (keyIsDown(32)) {
