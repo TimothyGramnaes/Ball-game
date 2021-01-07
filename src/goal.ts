@@ -82,8 +82,8 @@ class Goal {
     }
 
     public draw() {
-        //drawSprites();
-        //background(0);
+        
+        drawSprite(this.goal);
     }
 }
 

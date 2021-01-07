@@ -1,9 +1,14 @@
 class EndScreen {
     private endGameCallback: Function;
     private restartGameCallback: Function;
+    private playAgain: any;
+
     constructor(endGameCallback: Function, restartGameCallback: any) {
         this.endGameCallback = endGameCallback;
         this.restartGameCallback = restartGameCallback;
+
+        this.playAgain = createSprite(width / 2, height - 400, 100, 100);
+        this.playAgain.addImage(playAgain);
     }
 
    
@@ -17,9 +22,6 @@ class EndScreen {
     }
 
     public draw() {
-        //background(255)
-        fill(255)
-        rect(width / 2, height / 2, 200, 100)
-        text('Press ENTER to play again', 100, 100)
+        drawSprite(this.playAgain);
     }
 }  

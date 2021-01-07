@@ -12,6 +12,7 @@ class TheGame {
     constructor() {
         isGameRunning = false
         this.startScreen = new StartScreen(this.startGame)
+        
 
         gameOver = false; 
         this.endScreen = new EndScreen(this.endGame, this.restartGame)
@@ -83,22 +84,25 @@ class TheGame {
     
     resetGame() {
         this.goal.goal.scale = 1;
+       
         this.goal.goal.position.x = this.goal.positionX
         this.goal.goal.position.y = this.goal.positionY
-        this.ball.ball.position.x = 200
-        this.ball.ball.position.y = 200
 
-        
+        this.ball.ball.position.x = 200
+        this.ball.ball.position.y = 200   
     }
+  
     public draw() {
-        background(0)
+        // background(0)
         this.paddle.draw()
         this.ball.draw()
         this.goal.draw()
-        drawSprites()
+        this.walls.draw()
+        this.goal.draw();
 
         if (isGameRunning === false) {
             this.startScreen.draw();
+
         } 
         
         if(gameOver) {
