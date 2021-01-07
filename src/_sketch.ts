@@ -67,9 +67,6 @@ function draw() {
     background("#f7ede2")
     game.update();
     game.draw();
-    
-
-
 }
 
 // /**
