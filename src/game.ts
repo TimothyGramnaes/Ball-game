@@ -9,6 +9,7 @@ class TheGame {
     //private isGameRunning: boolean;
     //private gameOver: boolean;
     public walls: Walls;
+    private timer: Timer;
     constructor() {
         isGameRunning = false
         this.startScreen = new StartScreen(this.startGame)
@@ -22,7 +23,8 @@ class TheGame {
         this.ball = new Ball()
         this.walls = new Walls()
         this.paddle = new Paddle()        
-        this.goal = new Goal();    
+        this.goal = new Goal();   
+        this.timer = new Timer(); 
     }
 
     private startGame() {
@@ -67,6 +69,7 @@ class TheGame {
             // Bounce goal with ball 
 
             this.goal.ballCollision(this.ball.ball)
+            this.timer.draw()
     
             // Bounce paddle with walls 
         }
@@ -99,6 +102,7 @@ class TheGame {
         this.goal.draw()
         this.walls.draw()
         this.goal.draw();
+        //this.timer.draw();
 
         if (isGameRunning === false) {
             this.startScreen.draw();
@@ -112,6 +116,7 @@ class TheGame {
            this.ball.speed = 8
            this.goal.speed = 5
         }
+        
     }
 }
 
