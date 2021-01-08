@@ -14,6 +14,11 @@
         
         this.paddle.immovable = true;
     }
+
+
+    projectileCollision(sprite: any) {
+        this.paddle.scale -= 0.34
+    }
     
 
 
