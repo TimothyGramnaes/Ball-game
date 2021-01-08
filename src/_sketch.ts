@@ -1,7 +1,8 @@
 interface ISound {
     goalCollide: p5.SoundFile,
-    wallCollide: p5.SoundFile,
+    projectileCollide: p5.SoundFile,
     backgroundMusic: p5.SoundFile
+    gameOverMusic: p5.SoundFile
 }
 
 // //---- GLOBAL VARIABLES ----//
@@ -47,8 +48,9 @@ function preload() {
 
     sounds = {
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),
-        wallCollide: loadSound('./assets/music/ballcollision.mp3'),
-        backgroundMusic: loadSound('./assets/music/cute.mp3')
+        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
+        backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
+        gameOverMusic: loadSound('./assets/music/gameover.mp3')
     }
 
     //     // Tyvärr har jag inte fått till den globala typningen för
@@ -70,8 +72,10 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-    sounds.backgroundMusic.play()
-    sounds.backgroundMusic.setVolume(.03);
+    sounds.backgroundMusic.play();
+    sounds.backgroundMusic.setVolume(.08);
+    sounds.gameOverMusic.setVolume(.5);
+  
 }
 
 // /**
