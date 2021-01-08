@@ -11,17 +11,14 @@ class Timer {
         this.start = true;
     }
 
-    startTimer() {
-        if(this.start == false) {
-            (this.start = true)
-        }
-    }
 
-    stopTimer() {
-        if(this.start == true) {
-            (this.start = false)
-        }
-    }
+    // stopTimer() {
+    //     if(this.start == true) {
+    //         (this.start = false)
+
+    //     } 
+    // }
+
 
     update() {
         if(this.start){
@@ -40,13 +37,24 @@ class Timer {
         }
     }
 
-    draw() {
-       
-        
-        textAlign(CENTER);
-        fill(0);
-        textSize(15);
-        text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 50, 50);
+    
+    drawTimer() {  
+        textAlign(LEFT);
+        fill(132,165,157);
+        textSize(28);
+        textFont ('Quicksand');
+        text('Timer', 25, 50);
+
+        text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
     }
+
+    drawHighScore() {
+        textAlign(LEFT);
+        fill(132,165,157);
+        textSize(28);
+        textFont ('Quicksand');
+        text('High Score', 25, 50);
+        text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
+}
 
 }

@@ -6,7 +6,6 @@ interface ISound {
 
 // //---- GLOBAL VARIABLES ----//
 
-
 let imageCorona: p5.Image;
 let imageBall: p5.Image;
 let imagePaddle: p5.Image;

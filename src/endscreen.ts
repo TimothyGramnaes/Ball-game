@@ -15,6 +15,7 @@ class EndScreen {
     public update() {
         if(gameIsOver){
             this.endGameCallback()
+
             if (keyIsDown(13)) {
                 this.restartGameCallback(); 
             }
@@ -23,5 +24,6 @@ class EndScreen {
 
     public draw() {
         drawSprite(this.playAgain);
+        
     }
 }  

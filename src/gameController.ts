@@ -19,9 +19,6 @@ class GameController {
         this.timer = new Timer();
     }
 
-
-  
-
     public update() {
        
         if(isGameRunning === false) {
@@ -77,18 +74,29 @@ class GameController {
     }
   
     public draw() {
+
         for(const projectile of this.projectiles){
             projectile.draw();
         }
-        this.paddle.draw()
-        this.ball.draw()
-        this.goal.draw()
-        this.walls.draw()
-        this.goal.draw();
 
         if(isGameRunning === true) {
-            this.timer.draw();
+            this.timer.drawTimer();
+
+            this.paddle.draw()
+            this.ball.draw()
+            this.goal.draw()
+            this.walls.draw()
+            this.goal.draw();
         } 
+
+        if(gameIsOver === true) {
+            this.timer.drawHighScore();
+            this.paddle.draw()
+            this.ball.draw()
+            this.goal.draw()
+            this.walls.draw()
+            this.goal.draw();
+        }
 
         //this.timer.draw();        
         // if(gameOver) {

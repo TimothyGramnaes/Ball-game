@@ -34,7 +34,6 @@ class TheGame {
         if(!gameOver){
             this.gameController.update();
         }
-       
 
         this.startScreen.update();
 
@@ -52,9 +51,9 @@ class TheGame {
          //    this.goal.speed = 5
          }
         this.gameController.draw();
-        if (isGameRunning === false) {
-            this.startScreen.draw();
-        } 
+            if (isGameRunning === false) {
+                this.startScreen.draw();
+            } 
     }
 }
 
