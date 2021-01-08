@@ -67,7 +67,7 @@ class GameController {
                 projectile.bounce(this.walls.rightWall);
                 projectile.bounce(this.walls.bottomWall);
                 
-                projectile.paddleCollision(this.paddle.paddle)
+                projectile.paddleCollision(this.paddle.paddle, endGameCallback)
                 projectile.ballCollision(this.ball.ball)
                 projectile.bounce(this.ball.ball)
                 //projectile.rotation -= 2
@@ -85,7 +85,7 @@ class GameController {
        
     }
   
-    public draw() {
+    public draw(gameState: GameState) {
         for(const projectile of this.projectiles){
             projectile.draw();
         }

@@ -19,14 +19,14 @@ class Projectile {
         
     }
 
-    paddleCollision(sprite: any) {
+    paddleCollision(sprite: any, endGameCallback: Function) {
         // Shrink paddle on collission with sprites
         if (this.sprite.bounce(sprite)) {
             sprite.scale -= 0.2
 
             if(sprite.scale < 0.6){
                 sprite.remove()
-                gameIsOver = true;
+                endGameCallback(false);
             }
 
         }

@@ -50,7 +50,7 @@ class TheGame {
     
   
     public draw() {
-        this.gameController.draw();
+        this.gameController.draw(this.gameState);
         if (this.gameState === 'Start') {
             this.startScreen.draw();
         } 
