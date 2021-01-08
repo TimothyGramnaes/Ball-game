@@ -11,7 +11,10 @@ class Projectile {
         // this.projectile2 = createSprite(goal.position.x, goal.position.y, 20, 20)
         // this.projectile3 = createSprite(goal.position.x,goal.position.y, 20, 20)
         this.sprite.setSpeed(this.speed, Math.random() * 359)
+        this.sprite.setCollider('circle', 0, 0, 10);
+        conf2.resize(0, 40);
         this.sprite.addImage(conf2); 
+       // this.sprite.rotation -= 2
         // this.projectile2.setSpeed(this.speed, Math.random() * 359)
         // this.projectile3.setSpeed(this.speed, Math.random() * 359)
         
@@ -43,8 +46,14 @@ class Projectile {
         this.sprite.setSpeed(this.speed)
     }
 
+    public update() {
+        this.sprite.rotation -= 2
+
+    }
+
     public draw() {
         drawSprite(this.sprite)
+
         //drawSprite(this.projectile2)
         //drawSprite(this.projectile3)
     }

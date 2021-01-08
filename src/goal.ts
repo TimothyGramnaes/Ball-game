@@ -32,6 +32,7 @@ class Goal {
             projectiles.push(new Projectile(this))
             projectiles.push(new Projectile(this))
             projectiles.push(new Projectile(this))
+            projectiles.push(new Projectile(this))
             // Goal shrinks after impact with the ball
             this.sprite.scale -= 0.2
 

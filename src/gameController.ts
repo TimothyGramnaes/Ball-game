@@ -40,6 +40,8 @@ class GameController {
             this.ball.bounce(this.paddle.paddle)
     
             this.paddle.update();
+
+            
             
             // Bounce goal with walls
             this.goal.bounce(this.walls.leftWall);
@@ -47,9 +49,9 @@ class GameController {
             this.goal.bounce(this.walls.rightWall);
             this.goal.bounce(this.walls.bottomWall);
             
-    
+            
             // Bounce goal with ball 
-
+            
             let projectiles = this.goal.ballCollision(this.ball.ball)
             this.projectiles.push(...projectiles)
             for(const projectile of this.projectiles) {
@@ -61,8 +63,12 @@ class GameController {
                 projectile.paddleCollision(this.paddle.paddle)
                 projectile.ballCollision(this.ball.ball)
                 projectile.bounce(this.ball.ball)
+                //projectile.rotation -= 2
             }
             
+            for(const projectile of this.projectiles){
+                projectile.update();
+            }
             // Projectile collision with paddle
             //this.paddle.bounce(this.projectiles.sprite);
 
