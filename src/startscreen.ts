@@ -10,6 +10,7 @@ class StartScreen {
         //this.text = 'Please press SPACE to start the game'
         this.startGameImg = createSprite(width / 2, height - 400, 100, 100);
         this.startGameImg.addImage(startGameImg);
+        this.prevIsDownP = false; 
     }
 
     // pause(speed:any){
@@ -23,10 +24,10 @@ class StartScreen {
         
         let muteKeyWasPressed = !this.prevIsDownP && keyIsDown(80) 
         if (muteKeyWasPressed) {
-            if (soundes.backgroundMusic.isPaused()) {
-                soundes.backgroundMusic.play()
+            if (sounds.backgroundMusic.isPaused()) {
+                sounds.backgroundMusic.play()
             } else {
-                soundes.backgroundMusic.pause()
+                sounds.backgroundMusic.pause()
 
             }
         } 

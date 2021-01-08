@@ -78,7 +78,7 @@ function setup() {
 
     sounds.backgroundMusic.play();
     sounds.backgroundMusic.setVolume(.08);
-    soundes.backgroundMusic.setLoop(true)
+    sounds.backgroundMusic.setLoop(true)
 }
 
 // /**
