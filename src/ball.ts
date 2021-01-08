@@ -5,6 +5,7 @@ class Ball {
     position: any
     // color: number
     speed: number
+   // sprite: any
 
             
     constructor() {
@@ -46,6 +47,13 @@ class Ball {
         //     this.maxSpeed.y *= -1;
         // }
     }
+
+    // projectileCollision(sprite: any) {
+    //     if (this.ball.bounce(sprite)) {
+    //         console.log('hej')
+    //     }
+
+    // }
    
     public update() {
         

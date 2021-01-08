@@ -32,6 +32,7 @@ class Goal {
             projectiles.push(new Projectile(this))
             projectiles.push(new Projectile(this))
             projectiles.push(new Projectile(this))
+            projectiles.push(new Projectile(this))
             // Goal shrinks after impact with the ball
             this.sprite.scale -= 0.2
 
@@ -42,6 +43,7 @@ class Goal {
             this.sprite.setSpeed(this.speed += 1)
             sounds.goalCollide.play()
             if(this.sprite.scale < 0.2){
+                this.sprite.remove()
                 gameIsOver = true;
             }
         }
