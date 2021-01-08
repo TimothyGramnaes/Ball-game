@@ -1,15 +1,16 @@
 class EndScreen {
-    private endGameCallback: Function;
     private restartGameCallback: Function;
-    constructor(endGameCallback: Function, restartGameCallback: any) {
-        this.endGameCallback = endGameCallback;
+    private playAgain: any;
+
+    constructor(restartGameCallback: Function) {
         this.restartGameCallback = restartGameCallback;
+        this.playAgain = createSprite(width / 2, height - 400, 100, 100);
+        this.playAgain.addImage(playAgain);
     }
 
    
-    public update() {
-        if(gameIsOver){
-            this.endGameCallback()
+    public update(gameState: GameState) {
+        if(gameState === 'GameOver'  || gameState === 'GameWon'){
             if (keyIsDown(13)) {
                 this.restartGameCallback(); 
             }
@@ -17,9 +18,6 @@ class EndScreen {
     }
 
     public draw() {
-        //background(255)
-        fill(255)
-        rect(width / 2, height / 2, 200, 100)
-        text('Press ENTER to play again', 100, 100)
+        drawSprite(this.playAgain);
     }
-}  
+} 

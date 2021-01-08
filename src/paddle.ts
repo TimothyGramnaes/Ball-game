@@ -14,11 +14,17 @@
         
         this.paddle.immovable = true;
     }
+
+
+    // projectileCollision(sprite: any) {
+    //     if(this.paddle.bounce(sprite)){
+    //     this.paddle.scale -= 0.34
+    //     }
+    // }
     
 
 
     draw() {
-        background(0)
         this.paddle.position.x = mouseX;
         this.paddle.position.y = mouseY;
         drawSprite(this.paddle)

@@ -1,5 +1,8 @@
-interface ISounds {
-    backgroundMusic: p5.SoundFile;
+
+interface ISound {
+    goalCollide: p5.SoundFile,
+    wallCollide: p5.SoundFile,
+    backgroundMusic: p5.SoundFile
 }
 
 // //---- GLOBAL VARIABLES ----//
@@ -10,14 +13,17 @@ let imageBall: p5.Image;
 let imagePaddle: p5.Image;
 let game: TheGame;
 let snowBall: p5.Image; 
-let backgroundImage: p5.Image;
-let isGameRunning: boolean;
-let restartGame: boolean;
-let gameOver: boolean;
-let gameIsOver: boolean;
-let soundes: ISounds;
+let topWall: p5.Image;
+let bottomWall: p5.Image;
+let leftWall: p5.Image;
+let rightWall: p5.Image;
+
+let conf2: p5.Image;
 
 
+let startGameImg: p5.Image;
+let playAgain: p5.Image;
+let sounds: ISound;
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -29,8 +35,20 @@ function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
-    soundes = {
-        backgroundMusic: loadSound('./assets/music/megan.mp3'),
+    conf2 = loadImage('./assets/images/conf2.png')
+
+    topWall = loadImage('./assets/images/topwall.png')
+    bottomWall = loadImage('./assets/images/bottomwall.png')
+    leftWall = loadImage('./assets/images/leftwall.png')
+    rightWall = loadImage('./assets/images/rightwall.png')
+
+    startGameImg = loadImage('./assets/images/startthegame.png')
+    playAgain = loadImage('./assets/images/playagain.png')
+
+    sounds = {
+        goalCollide: loadSound('./assets/music/goalcrash.mp3'),
+        wallCollide: loadSound('./assets/music/ballcollision.mp3'),
+        backgroundMusic: loadSound('./assets/music/cute.mp3')
     }
 
 
@@ -53,11 +71,11 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-
+  
     // volume_up volume_off material icons
 
     soundes.backgroundMusic.play();
-    soundes.backgroundMusic.setVolume(0.1);
+    soundes.backgroundMusic.setVolume(0.03);
     soundes.backgroundMusic.setLoop(true)
 }
 
@@ -67,10 +85,9 @@ function setup() {
 //  * you created in the setup function above
 //  */
 function draw() {
-    background('blue'); 
+    background("#f7ede2")
     game.update();
     game.draw();
-
 }
 
 // /**

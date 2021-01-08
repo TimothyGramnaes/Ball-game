@@ -1,56 +1,74 @@
 // import { Image } from "p5";
 
 class Goal {  
-    goal: any 
+    sprite: any 
     speed: number
-    positionX: number
-    positionY: number
-
-
+  
         constructor() {
-            this.speed = 5;
-            this.positionX = width / 2;
-            this.positionY = height / 2;
-            this.goal = createSprite(this.positionX, this.positionY, 50, 50);
-            this.goal.setCollider('circle', 0, 0, 105)
+            this.speed = 10;
+            
+            this.sprite = createSprite(width / 2, height / 2, 50, 50);
+            this.sprite.setCollider('circle', 0, 0, 105)
             this.speed = 8;
-            this.goal.setSpeed(this.speed, 30);
-            this.goal.addImage(snowBall);
+            this.sprite.setSpeed(this.speed, 30);
+            this.sprite.addImage(snowBall); 
         }
 
-    
-    setGoalStartSpeed() {
-        this.goal.setSpeed(this.speed);
-    }    
-
+    // Gives the goal a starting speed
+  
+    // Bounces the goal against wall and bounce and bypasses bounces speed logic.
     bounce(sprite: any){
-        this.goal.bounce(sprite)
-        this.goal.setSpeed(this.speed)
+        this.sprite.bounce(sprite)
+        this.sprite.setSpeed(this.speed)
     }
-    
-    bounceShrink(sprite: any) {
-        if(this.goal.bounce(sprite)){
-            this.goal.scale -= 0.2
-            this.goal.setSpeed(3)
-            if(this.goal.scale < 0.2){
-                gameIsOver = true;
+
+
+    // Goal collides with the ball, shrinks, gets faster and creates enemies
+    ballCollision(sprite: any, endGameCallback: Function) {
+        let projectiles: Projectile[] = []
+        if(this.sprite.bounce(sprite)){
+            projectiles.push(new Projectile(this))
+            projectiles.push(new Projectile(this))
+            projectiles.push(new Projectile(this))
+            projectiles.push(new Projectile(this))
+            // Goal shrinks after impact with the ball
+            this.sprite.scale -= 0.2
+
+
+            // Creates enemy projectiles after impact with the ball      
+
+             // Goal becomes faster after impact with the ball
+            this.sprite.setSpeed(this.speed += 1)
+            sounds.goalCollide.play()
+            if(this.sprite.scale < 0.2){
+                endGameCallback(true);
+                endGameCallback(false)
+                this.sprite.remove()
+            
             }
         }
+        return projectiles
     }
 
-    goalAccelerate(sprite: any) {
-        if(this.goal.bounce(sprite)) {
-            this.goal.setSpeed(this.speed += 2)
-        }
-    }
+
+    // goal becomes faster after collision with the ball
+    // goalAccelerate(sprite: any) {
+    //     if(this.goal.bounce(sprite)) {
+    //     }
+    // }
     
+    // // creates projectiles from the goal after impact from the ball
+    // goalProjectiles(sprite: any) {
+    //     if(this.goal.bounce(sprite)) {
+
+    //     }
+    // }
 
     public setup() {
     }
 
     public draw() {
-        //drawSprites();
-        //background(0);
+        drawSprite(this.sprite);
     }
 }
 
