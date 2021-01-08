@@ -16,9 +16,11 @@
     }
 
 
-    projectileCollision(sprite: any) {
-        this.paddle.scale -= 0.34
-    }
+    // projectileCollision(sprite: any) {
+    //     if(this.paddle.bounce(sprite)){
+    //     this.paddle.scale -= 0.34
+    //     }
+    // }
     
 
 
