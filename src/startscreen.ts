@@ -20,6 +20,7 @@ class StartScreen {
         if (keyIsDown(32)) {
             this.startGameCallback();
         }
+
         if (mouseIsPressed) {
             sounds.backgroundMusic.stop();
         } 
@@ -27,13 +28,6 @@ class StartScreen {
     }
 
     public draw() {
-        //background(0)
-        // fill(255)
-        drawSprite(this.startGameImg);
-        
-        
-        // rect(width / 2, height - 600, 100, 100)
-        // text(this.text, width / 2 - 80, 300, 300, 400)
-        
+        drawSprite(this.startGameImg);  
     }
 }  

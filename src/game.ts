@@ -1,49 +1,60 @@
-
+type GameState = 'Start' | 'Running' | 'GameOver' | 'GameWon'
 class TheGame {
-    private startScreen: StartScreen;
     private endScreen: EndScreen;
     private gameController: GameController;
+    
+    private gameState: GameState;
+    private startScreen: StartScreen;
+    //private restartGame: boolean;
     // private playField: Playfield;
    
     constructor() {
-        isGameRunning = false;
+        this.gameState = 'Start';
         this.startScreen = new StartScreen(this.startGame);
 
-        gameOver = false; 
-        this.endScreen = new EndScreen(this.endGame, this.restartGame);
+       
+        this.endScreen = new EndScreen(this.restartGame);
 
         this.gameController = new GameController();
-
+           
     }
 
-    private startGame() {
-        isGameRunning = true; 
+
+    
+    private startGame = () => {
+        this.gameState = 'Running'; 
+        this.gameController = new GameController();
+        console.log(this)  
     }
 
-    private endGame() {
-        gameOver = true;
+    private endGame = (isWon: boolean) => {
+        if(isWon){
+            this.gameState = 'GameWon'
+        }else {
+            this.gameState = 'GameOver';
+        }
     }
 
     private restartGame = () => {
-        isGameRunning = true;
-        this.gameController = new GameController();
-        gameOver = false;
+
+        this.gameState = 'Running'
+        this.gameController = new GameController();   
     }
 
     public update() {
-        if(!gameOver){
-            this.gameController.update();
-        }
-       
 
         this.startScreen.update();
-
-        this.endScreen.update();    
+        this.gameController.update(this.gameState, this.endGame);
+        this.endScreen.update(this.gameState);    
     }
     
   
     public draw() {
-        if(gameOver) {
+        this.gameController.draw();
+        if (this.gameState === 'Start') {
+            this.startScreen.draw();
+        } 
+        if(this.gameState === 'GameOver' || this.gameState === 'GameWon') {
             this.endScreen.draw();
             
          //    this.ball.ball.setSpeed(0)
@@ -51,10 +62,6 @@ class TheGame {
          //    this.ball.speed = 8
          //    this.goal.speed = 5
          }
-        this.gameController.draw();
-        if (isGameRunning === false) {
-            this.startScreen.draw();
-        } 
     }
 }
 

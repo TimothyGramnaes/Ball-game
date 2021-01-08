@@ -28,13 +28,12 @@ class Ball {
         drawSprite(this.ball);
     }
 
-    setBallStartSpeed() {
-        this.ball.setSpeed(this.speed)
-    }
-
     bounce(sprite: any) {
         this.ball.bounce(sprite)
         this.ball.setSpeed(this.speed)
+
+        
+
         if (this.ball.bounceWalls) {
             sounds.wallCollide.play();
         }

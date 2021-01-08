@@ -16,12 +16,10 @@ let topWall: p5.Image;
 let bottomWall: p5.Image;
 let leftWall: p5.Image;
 let rightWall: p5.Image;
-let conf2: p5.Image;
-let isGameRunning: boolean;
 
-let restartGame: boolean;
-let gameOver: boolean;
-let gameIsOver: boolean;
+let conf2: p5.Image;
+
+
 let startGameImg: p5.Image;
 let playAgain: p5.Image;
 let sounds: ISound;
