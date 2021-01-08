@@ -11,21 +11,30 @@ class Projectile {
         // this.projectile2 = createSprite(goal.position.x, goal.position.y, 20, 20)
         // this.projectile3 = createSprite(goal.position.x,goal.position.y, 20, 20)
         this.sprite.setSpeed(this.speed, Math.random() * 359)
+        this.sprite.addImage(conf2); 
         // this.projectile2.setSpeed(this.speed, Math.random() * 359)
         // this.projectile3.setSpeed(this.speed, Math.random() * 359)
         
     }
 
     paddleCollision(sprite: any) {
+        // Shrink paddle on collission with sprites
         if (this.sprite.bounce(sprite)) {
-            sprite.scale -= 0.34
+            sprite.scale -= 0.2
 
-            if(sprite.scale < 0.30){
+            if(sprite.scale < 0.6){
+                sprite.remove()
                 gameIsOver = true;
             }
 
         }
 
+    }
+
+    ballCollision(sprite: any) {
+        if (this.sprite.bounce(sprite)) {
+            this.sprite.remove()
+        }
     }
     
 

@@ -42,6 +42,7 @@ class Goal {
             this.sprite.setSpeed(this.speed += 1)
 
             if(this.sprite.scale < 0.2){
+                this.sprite.remove()
                 gameIsOver = true;
             }
         }

@@ -29,13 +29,12 @@ class GameController {
             this.ball.update();
             this.goal.setGoalStartSpeed();
             this.ball.setBallStartSpeed();
-            //this.goal.speed = 3;
-            //this.ball.speed = 3;
+      
             this.ball.bounce(this.walls.leftWall);
             this.ball.bounce(this.walls.topWall);
             this.ball.bounce(this.walls.rightWall);
             this.ball.bounce(this.walls.bottomWall);
-            // this.ball.bounce(this.goal.sprite)
+          
     
             //Bounce ball and paddle
             this.ball.bounce(this.paddle.paddle)
@@ -58,8 +57,10 @@ class GameController {
                 projectile.bounce(this.walls.topWall);
                 projectile.bounce(this.walls.rightWall);
                 projectile.bounce(this.walls.bottomWall);
-
+                
                 projectile.paddleCollision(this.paddle.paddle)
+                projectile.ballCollision(this.ball.ball)
+                projectile.bounce(this.ball.ball)
             }
             
             // Projectile collision with paddle
