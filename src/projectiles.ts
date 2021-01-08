@@ -22,11 +22,12 @@ class Projectile {
     paddleCollision(sprite: any, endGameCallback: Function) {
         // Shrink paddle on collission with sprites
         if (this.sprite.bounce(sprite)) {
-            sprite.scale -= 0.2
-
+            sounds.projectileCollide.play()
+             sprite.scale -= 0.2
             if(sprite.scale < 0.6){
                 sprite.remove()
                 endGameCallback(false);
+
             }
 
         }

@@ -1,8 +1,9 @@
 
 interface ISound {
     goalCollide: p5.SoundFile,
-    wallCollide: p5.SoundFile,
+    projectileCollide: p5.SoundFile,
     backgroundMusic: p5.SoundFile
+    gameOverMusic: p5.SoundFile
 }
 
 // //---- GLOBAL VARIABLES ----//
@@ -47,8 +48,9 @@ function preload() {
 
     sounds = {
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),
-        wallCollide: loadSound('./assets/music/ballcollision.mp3'),
-        backgroundMusic: loadSound('./assets/music/cute.mp3')
+        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
+        backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
+        gameOverMusic: loadSound('./assets/music/gameover.mp3')
     }
 
 
@@ -74,8 +76,8 @@ function setup() {
   
     // volume_up volume_off material icons
 
-    soundes.backgroundMusic.play();
-    soundes.backgroundMusic.setVolume(0.03);
+    sounds.backgroundMusic.play();
+    sounds.backgroundMusic.setVolume(.08);
     soundes.backgroundMusic.setLoop(true)
 }
 
