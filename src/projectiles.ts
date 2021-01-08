@@ -19,7 +19,7 @@ class Projectile {
     paddleCollision(sprite: any) {
         if (this.sprite.bounce(sprite)) {
             sprite.scale -= 0.34
-
+            sounds.projectileCollide.play()
             if(sprite.scale < 0.30){
                 gameIsOver = true;
             }
