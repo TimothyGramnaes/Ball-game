@@ -1,3 +1,4 @@
+
 interface ISound {
     goalCollide: p5.SoundFile,
     projectileCollide: p5.SoundFile,
@@ -36,7 +37,6 @@ function preload() {
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
     conf2 = loadImage('./assets/images/conf2.png')
-   
 
     topWall = loadImage('./assets/images/topwall.png')
     bottomWall = loadImage('./assets/images/bottomwall.png')
@@ -52,6 +52,7 @@ function preload() {
         backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
         gameOverMusic: loadSound('./assets/music/gameover.mp3')
     }
+
 
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
@@ -72,10 +73,12 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
+  
+    // volume_up volume_off material icons
+
     sounds.backgroundMusic.play();
     sounds.backgroundMusic.setVolume(.08);
-    sounds.gameOverMusic.setVolume(.5);
-  
+    soundes.backgroundMusic.setLoop(true)
 }
 
 // /**
