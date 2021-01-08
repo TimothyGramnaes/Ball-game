@@ -15,6 +15,20 @@ class Projectile {
         // this.projectile3.setSpeed(this.speed, Math.random() * 359)
         
     }
+
+    paddleCollision(sprite: any) {
+        if (this.sprite.bounce(sprite)) {
+            sprite.scale -= 0.34
+
+            if(sprite.scale < 0.30){
+                gameIsOver = true;
+            }
+
+        }
+
+    }
+    
+
     bounce(sprite: any){
         this.sprite.bounce(sprite)
         this.sprite.setSpeed(this.speed)

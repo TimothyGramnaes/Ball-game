@@ -63,18 +63,15 @@ class GameController {
                 projectile.bounce(this.walls.topWall);
                 projectile.bounce(this.walls.rightWall);
                 projectile.bounce(this.walls.bottomWall);
+
+                projectile.paddleCollision(this.paddle.paddle)
             }
             this.timer.update();
             
             
-           // Bounce paddle with walls 
-           //this.projectiles.draw()
-           //this.projectiles = new Projectiles(this.goal.goal)
+            // Projectile collision with paddle
+            //this.paddle.bounce(this.projectiles.sprite);
 
-            // drawSprite(this.projectiles.projectile)
-            // drawSprite(this.projectiles.projectile2)
-            // drawSprite(this.projectiles.projectile3)
-            // this.projectiles.draw(); 
         }
        
     }

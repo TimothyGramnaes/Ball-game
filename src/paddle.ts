@@ -14,6 +14,13 @@
         
         this.paddle.immovable = true;
     }
+
+
+    // projectileCollision(sprite: any) {
+    //     if(this.paddle.bounce(sprite)){
+    //     this.paddle.scale -= 0.34
+    //     }
+    // }
     
 
 
