@@ -5,6 +5,7 @@ class Ball {
     position: any
     // color: number
     speed: number
+   // sprite: any
 
             
     constructor() {
@@ -27,15 +28,15 @@ class Ball {
         drawSprite(this.ball);
     }
 
-    setBallStartSpeed() {
-        this.ball.setSpeed(this.speed)
-    }
-
     bounce(sprite: any) {
         this.ball.bounce(sprite)
-
         this.ball.setSpeed(this.speed)
 
+        
+
+        if (this.ball.bounceWalls) {
+            sounds.wallCollide.play();
+        }
         // // Bounces the ball on left and right wall
         // if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
         //     this.maxSpeed.x *= -1;
@@ -45,11 +46,18 @@ class Ball {
         //     this.maxSpeed.y *= -1;
         // }
     }
-   
 
+    // projectileCollision(sprite: any) {
+    //     if (this.ball.bounce(sprite)) {
+    //         console.log('hej')
+    //     }
+
+    // }
+   
     public update() {
-      //  this.position.add(this.velocity);
-     }
+        
+    }
+ 
 
     bounceWalls() {
  

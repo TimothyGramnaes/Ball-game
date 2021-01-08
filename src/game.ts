@@ -1,117 +1,67 @@
-
+type GameState = 'Start' | 'Running' | 'GameOver' | 'GameWon'
 class TheGame {
-    private startScreen: StartScreen;
     private endScreen: EndScreen;
+    private gameController: GameController;
+    
+    private gameState: GameState;
+    private startScreen: StartScreen;
+    //private restartGame: boolean;
     // private playField: Playfield;
-    private paddle: Paddle;
-    private ball: Ball; 
-    private goal: Goal;
-    //private isGameRunning: boolean;
-    //private gameOver: boolean;
-    public walls: Walls;
+   
     constructor() {
-        isGameRunning = false
-        this.startScreen = new StartScreen(this.startGame)
-        
+        this.gameState = 'Start';
+        this.startScreen = new StartScreen(this.startGame);
 
-        gameOver = false; 
-        this.endScreen = new EndScreen(this.endGame, this.restartGame)
-
-        restartGame = false;
-        
-        this.ball = new Ball()
-        this.walls = new Walls()
-        this.paddle = new Paddle()        
-        this.goal = new Goal();    
-    }
-
-    private startGame() {
-        isGameRunning = true; 
-        restartGame = false;
-    }
-
-    private endGame() {
-        gameOver = true;
-    }
-
-    restartGame() {
-        restartGame = true;
-    }
-    public update() {
-        if(isGameRunning === false) {
-            this.ball.ball.setSpeed(0);
-            this.goal.goal.setSpeed(0);
-        } else{
-            this.ball.update();
-            this.goal.setGoalStartSpeed();
-            this.ball.setBallStartSpeed();
-            //this.goal.speed = 3;
-            //this.ball.speed = 3;
-            this.ball.bounce(this.walls.leftWall);
-            this.ball.bounce(this.walls.topWall);
-            this.ball.bounce(this.walls.rightWall);
-            this.ball.bounce(this.walls.bottomWall);
-            // this.ball.bounce(this.goal.sprite)
-    
-            //Bounce ball and paddle
-            this.ball.bounce(this.paddle.paddle)
-    
-            this.paddle.update();
-    
-            // Bounce goal with walls
-            this.goal.bounce(this.walls.leftWall);
-            this.goal.bounce(this.walls.topWall);
-            this.goal.bounce(this.walls.rightWall);
-            this.goal.bounce(this.walls.bottomWall);
-    
-            // Bounce goal with ball 
-
-            this.goal.ballCollision(this.ball.ball)
-    
-            // Bounce paddle with walls 
-        }
-        this.startScreen.update();
-
-        this.endScreen.update();
-        
-        if(restartGame) {
-            gameOver = false;
-            gameIsOver = false;
-            isGameRunning = false;
-            this.resetGame();
-        }
-    }
-    
-    resetGame() {
-        this.goal.goal.scale = 1;
        
-        this.goal.goal.position.x = this.goal.positionX
-        this.goal.goal.position.y = this.goal.positionY
+        this.endScreen = new EndScreen(this.restartGame);
 
-        this.ball.ball.position.x = 200
-        this.ball.ball.position.y = 200   
+        this.gameController = new GameController();
+           
     }
+
+
+    
+    private startGame = () => {
+        this.gameState = 'Running'; 
+        this.gameController = new GameController();
+        console.log(this)  
+    }
+
+    private endGame = (isWon: boolean) => {
+        if(isWon){
+            this.gameState = 'GameWon'
+        }else {
+            this.gameState = 'GameOver';
+        }
+    }
+
+    private restartGame = () => {
+
+        this.gameState = 'Running'
+        this.gameController = new GameController();   
+    }
+
+    public update() {
+
+        this.startScreen.update();
+        this.gameController.update(this.gameState, this.endGame);
+        this.endScreen.update(this.gameState);    
+    }
+    
   
     public draw() {
-        // background(0)
-        this.paddle.draw()
-        this.ball.draw()
-        this.goal.draw()
-        this.walls.draw()
-        this.goal.draw();
-
-        if (isGameRunning === false) {
+        this.gameController.draw();
+        if (this.gameState === 'Start') {
             this.startScreen.draw();
-
         } 
-        
-        if(gameOver) {
-           this.endScreen.draw();
-           this.ball.ball.setSpeed(0)
-           this.goal.goal.setSpeed(0)
-           this.ball.speed = 8
-           this.goal.speed = 5
-        }
+        if(this.gameState === 'GameOver' || this.gameState === 'GameWon') {
+            this.endScreen.draw();
+            
+         //    this.ball.ball.setSpeed(0)
+         //    this.goal.sprite.setSpeed(0)
+         //    this.ball.speed = 8
+         //    this.goal.speed = 5
+         }
     }
 }
 
