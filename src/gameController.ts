@@ -8,12 +8,14 @@ class GameController {
     //private isGameRunning: boolean;
     //private gameOver: boolean;
     public walls: Walls;
+    private timer: Timer;
     constructor() {  
         this.ball = new Ball();
         this.walls = new Walls();
         this.paddle = new Paddle();        
         this.goal = new Goal(); 
         this.projectiles = []
+        this.timer = new Timer();
     }
 
 
@@ -24,19 +26,27 @@ class GameController {
         if(gameState !== 'Running') {
             this.ball.ball.setSpeed(0);
             this.goal.sprite.setSpeed(0);
-              
+
+             
+ 
+            
         } else{
             this.ball.update();
+            
+      
+
             this.ball.bounce(this.walls.leftWall);
             this.ball.bounce(this.walls.topWall);
             this.ball.bounce(this.walls.rightWall);
             this.ball.bounce(this.walls.bottomWall);
-            // this.ball.bounce(this.goal.sprite)
+
     
             //Bounce ball and paddle
             this.ball.bounce(this.paddle.paddle)
     
             this.paddle.update();
+
+            
             
             // Bounce goal with walls
             this.goal.bounce(this.walls.leftWall);
@@ -44,26 +54,33 @@ class GameController {
             this.goal.bounce(this.walls.rightWall);
             this.goal.bounce(this.walls.bottomWall);
             
-    
+            
             // Bounce goal with ball 
 
+
             let projectiles = this.goal.ballCollision(this.ball.ball, endGameCallback)
+
             this.projectiles.push(...projectiles)
             for(const projectile of this.projectiles) {
                 projectile.bounce(this.walls.leftWall);
                 projectile.bounce(this.walls.topWall);
                 projectile.bounce(this.walls.rightWall);
                 projectile.bounce(this.walls.bottomWall);
+                
+                projectile.paddleCollision(this.paddle.paddle)
+                projectile.ballCollision(this.ball.ball)
+                projectile.bounce(this.ball.ball)
+                //projectile.rotation -= 2
             }
+            this.timer.update();
             
-           // Bounce paddle with walls 
-           //this.projectiles.draw()
-           //this.projectiles = new Projectiles(this.goal.goal)
+            
+            for(const projectile of this.projectiles){
+                projectile.update();
+            }
+            // Projectile collision with paddle
+            //this.paddle.bounce(this.projectiles.sprite);
 
-            // drawSprite(this.projectiles.projectile)
-            // drawSprite(this.projectiles.projectile2)
-            // drawSprite(this.projectiles.projectile3)
-            // this.projectiles.draw(); 
         }
        
     }
@@ -77,13 +94,18 @@ class GameController {
         this.goal.draw()
         this.walls.draw()
         this.goal.draw();
+
         
         // if(gameOver) {  
         //     this.ball.ball.setSpeed(0)
         //     this.goal.sprite.setSpeed(0)
         //     this.ball.speed = 8
         //     this.goal.speed = 5
-        // }
+
+        if(gameState === 'Running') {
+            this.timer.draw();
+        } 
+   
     }
 }
 

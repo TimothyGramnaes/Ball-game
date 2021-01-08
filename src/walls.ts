@@ -33,6 +33,8 @@ class Walls {
         drawSprite(this.bottomWall);
         
     }
+
+    
     
 }
 
