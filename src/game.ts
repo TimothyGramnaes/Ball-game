@@ -27,10 +27,13 @@ class TheGame {
     private restartGame = () => {
         isGameRunning = true;
         this.gameController = new GameController();
+        gameOver = false;
     }
 
     public update() {
-        this.gameController.update();
+        if(!gameOver){
+            this.gameController.update();
+        }
        
 
         this.startScreen.update();
@@ -42,6 +45,7 @@ class TheGame {
     public draw() {
         if(gameOver) {
             this.endScreen.draw();
+            
          //    this.ball.ball.setSpeed(0)
          //    this.goal.sprite.setSpeed(0)
          //    this.ball.speed = 8
