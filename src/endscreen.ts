@@ -1,20 +1,16 @@
 class EndScreen {
-    private endGameCallback: Function;
     private restartGameCallback: Function;
     private playAgain: any;
 
-    constructor(endGameCallback: Function, restartGameCallback: any) {
-        this.endGameCallback = endGameCallback;
+    constructor(restartGameCallback: Function) {
         this.restartGameCallback = restartGameCallback;
-
         this.playAgain = createSprite(width / 2, height - 400, 100, 100);
         this.playAgain.addImage(playAgain);
     }
 
    
-    public update() {
-        if(gameIsOver){
-            this.endGameCallback()
+    public update(gameState: GameState) {
+        if(gameState === 'GameOver'  || gameState === 'GameWon'){
             if (keyIsDown(13)) {
                 this.restartGameCallback(); 
             }
@@ -24,4 +20,4 @@ class EndScreen {
     public draw() {
         drawSprite(this.playAgain);
     }
-}  
+} 

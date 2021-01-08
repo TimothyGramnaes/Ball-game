@@ -15,9 +15,7 @@ class Goal {
         }
 
     // Gives the goal a starting speed
-    setGoalStartSpeed() {
-        this.sprite.setSpeed(this.speed);
-    }    
+  
     // Bounces the goal against wall and bounce and bypasses bounces speed logic.
     bounce(sprite: any){
         this.sprite.bounce(sprite)
@@ -26,7 +24,7 @@ class Goal {
 
 
     // Goal collides with the ball, shrinks, gets faster and creates enemies
-    ballCollision(sprite: any) {
+    ballCollision(sprite: any, endGameCallback: Function) {
         let projectiles: Projectile[] = []
         if(this.sprite.bounce(sprite)){
             projectiles.push(new Projectile(this))
@@ -42,7 +40,8 @@ class Goal {
             this.sprite.setSpeed(this.speed += 1)
 
             if(this.sprite.scale < 0.2){
-                gameIsOver = true;
+                endGameCallback(true);
+                endGameCallback(false)
             }
         }
         return projectiles
