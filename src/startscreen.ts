@@ -20,6 +20,9 @@ class StartScreen {
         if (keyIsDown(32)) {
             this.startGameCallback();
         }
+        if (mouseIsPressed) {
+            sounds.backgroundMusic.stop();
+        } 
 
     }
 
