@@ -42,7 +42,7 @@ class Goal {
 
             if(this.sprite.scale < 0.2){
                 endGameCallback(true);
-                endGameCallback(false)
+                //endGameCallback(false)
                 this.sprite.remove()
             
             }

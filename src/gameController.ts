@@ -77,6 +77,15 @@ class GameController {
     }
   
     public draw(gameState: GameState) {
+        if(gameState === 'Running') {
+            this.timer.drawTimer();
+        }
+        if(gameState === 'GameOver') {
+            this.timer.drawLost();
+        }
+        if(gameState === 'GameWon') {
+            this.timer.drawWon();
+        }
         for(const projectile of this.projectiles){
             projectile.draw();
         }
@@ -87,11 +96,12 @@ class GameController {
         this.goal.draw();
 
 
+
         // if(gameState === 'Running') {
         //     this.timer.draw();
         // }
+
     }
-}
 
         
 
