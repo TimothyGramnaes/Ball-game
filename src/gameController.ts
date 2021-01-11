@@ -87,9 +87,9 @@ class GameController {
         this.goal.draw();
 
 
-        if(gameState === 'Running') {
-            this.timer.draw();
-        }
+        // if(gameState === 'Running') {
+        //     this.timer.draw();
+        // }
     }
 }
 
