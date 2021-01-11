@@ -1,7 +1,7 @@
 class Timer {
-    millisecs: any;
-    seconds: any;
-    minutes: any;
+    millisecs: number;
+    seconds: number;
+    minutes: number;
     start: boolean;
 
     constructor() {
@@ -49,13 +49,21 @@ class Timer {
 
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
     }
-
-    drawHighScore() {
+    drawWon() {  
         textAlign(LEFT);
         fill(132,165,157);
         textSize(28);
         textFont ('Quicksand');
-        text('High Score', 25, 50);
+        text('TJOOOO', 25, 50);
+
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
+    }
+
+    drawLost() {
+        textAlign(LEFT);
+        fill(132,165,157);
+        textSize(28);
+        textFont ('Quicksand');
+        text('LOSER', 25, 50);
     }
 }

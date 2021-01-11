@@ -86,37 +86,35 @@ class GameController {
     }
   
     public draw(gameState: GameState) {
-        for(const projectile of this.projectiles){
-            projectile.draw();
-        }
         if(gameState === 'Running') {
             this.timer.drawTimer();
         }
-        if (gameState === 'GameWon') {
-            this.timer.drawHighScore();
+        if(gameState === 'GameOver') {
+            this.timer.drawLost();
+        }
+        if(gameState === 'GameWon') {
+            this.timer.drawWon();
+        }
+        for(const projectile of this.projectiles){
+            projectile.draw();
         }
         this.paddle.draw()
         this.ball.draw()
         this.goal.draw()
         this.walls.draw()
         this.goal.draw();
-
+        
+        
         
         // if(gameOver) {  
-        //     this.ball.ball.setSpeed(0)
-        //     this.goal.sprite.setSpeed(0)
-        //     this.ball.speed = 8
-        //     this.goal.speed = 5
-
-        if(gameState === 'Running') {
-            this.timer.drawTimer();
+            //     this.ball.ball.setSpeed(0)
+            //     this.goal.sprite.setSpeed(0)
+            //     this.ball.speed = 8
+            //     this.goal.speed = 5
+            
+           
         }
-        else if (gameState === 'GameWon') {
-            this.timer.drawHighScore();
-        }
-   
     }
-}
 
         
 
