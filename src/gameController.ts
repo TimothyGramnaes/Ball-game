@@ -89,6 +89,12 @@ class GameController {
         for(const projectile of this.projectiles){
             projectile.draw();
         }
+        if(gameState === 'Running') {
+            this.timer.drawTimer();
+        }
+        if (gameState === 'GameWon') {
+            this.timer.drawHighScore();
+        }
         this.paddle.draw()
         this.ball.draw()
         this.goal.draw()
@@ -103,8 +109,11 @@ class GameController {
         //     this.goal.speed = 5
 
         if(gameState === 'Running') {
-            this.timer.draw();
-        } 
+            this.timer.drawTimer();
+        }
+        else if (gameState === 'GameWon') {
+            this.timer.drawHighScore();
+        }
    
     }
 }
