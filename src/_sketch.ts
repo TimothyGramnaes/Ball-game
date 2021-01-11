@@ -10,7 +10,9 @@ let topWall: p5.Image;
 let bottomWall: p5.Image;
 let leftWall: p5.Image;
 let rightWall: p5.Image;
+let conf1: p5.Image;
 let conf2: p5.Image;
+let conf3: p5.Image;
 let isGameRunning: boolean;
 
 let restartGame: boolean;
@@ -29,7 +31,10 @@ function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
-    conf2 = loadImage('./assets/images/conf2.png')
+    conf1 = loadImage('./assets/images/conf2.png')
+    conf2 = loadImage('./assets/images/conf3.png')
+    conf3 = loadImage('./assets/images/conf4.png')
+
    
 
     topWall = loadImage('./assets/images/topwall.png')
