@@ -8,7 +8,6 @@ class GameController {
     //private isGameRunning: boolean;
     //private gameOver: boolean;
     public walls: Walls;
-    private timer: Timer;
     constructor() {  
 
         this.ball = new Ball();
@@ -16,7 +15,6 @@ class GameController {
         this.paddle = new Paddle();        
         this.goal = new Goal(); 
         this.projectiles = []
-        this.timer = new Timer();
     }
 
 
@@ -27,7 +25,6 @@ class GameController {
         if(isGameRunning === false) {
             this.ball.ball.setSpeed(0);
             this.goal.sprite.setSpeed(0);
-            
         } else{
             this.ball.update();
             this.goal.setGoalStartSpeed();
@@ -37,7 +34,7 @@ class GameController {
             this.ball.bounce(this.walls.topWall);
             this.ball.bounce(this.walls.rightWall);
             this.ball.bounce(this.walls.bottomWall);
-
+          
     
             //Bounce ball and paddle
             this.ball.bounce(this.paddle.paddle)
@@ -68,8 +65,6 @@ class GameController {
                 projectile.bounce(this.ball.ball)
                 //projectile.rotation -= 2
             }
-            this.timer.update();
-            
             
             for(const projectile of this.projectiles){
                 projectile.update();
@@ -90,12 +85,7 @@ class GameController {
         this.goal.draw()
         this.walls.draw()
         this.goal.draw();
-
-        if(isGameRunning === true) {
-            this.timer.draw();
-        } 
-
-        //this.timer.draw();        
+        
         // if(gameOver) {
         //    
         //    this.ball.ball.setSpeed(0)

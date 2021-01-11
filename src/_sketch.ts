@@ -1,9 +1,3 @@
-interface ISound {
-    goalCollide: p5.SoundFile,
-    wallCollide: p5.SoundFile,
-    backgroundMusic: p5.SoundFile
-}
-
 // //---- GLOBAL VARIABLES ----//
 
 
@@ -24,7 +18,6 @@ let gameOver: boolean;
 let gameIsOver: boolean;
 let startGameImg: p5.Image;
 let playAgain: p5.Image;
-let sounds: ISound;
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -47,12 +40,6 @@ function preload() {
     startGameImg = loadImage('./assets/images/startthegame.png')
     playAgain = loadImage('./assets/images/playagain.png')
 
-    sounds = {
-        goalCollide: loadSound('./assets/music/goalcrash.mp3'),
-        wallCollide: loadSound('./assets/music/ballcollision.mp3'),
-        backgroundMusic: loadSound('./assets/music/cute.mp3')
-    }
-
     //     // Tyvärr har jag inte fått till den globala typningen för
     //     // inladdningen av ljud men fungerar bra enligt nedan..
     //     // sound = (window as any).loadSound('../assets/mySound.wav');
@@ -72,8 +59,6 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-    sounds.backgroundMusic.play()
-    sounds.backgroundMusic.setVolume(.03);
 }
 
 // /**
