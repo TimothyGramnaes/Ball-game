@@ -31,19 +31,18 @@ class Goal {
             projectiles.push(new Projectile(this))
             projectiles.push(new Projectile(this))
             // Goal shrinks after impact with the ball
-            this.sprite.scale -= 0.2
-            
+            this.sprite.scale -= 0.1
+            sounds.goalCollide.play();
 
             // Creates enemy projectiles after impact with the ball      
 
              // Goal becomes faster after impact with the ball
             this.sprite.setSpeed(this.speed += 1)
 
-            if(this.sprite.scale < 0.2){
+            if(this.sprite.scale < 0.1){
                 endGameCallback(true);
                 //endGameCallback(false)
-                this.sprite.remove()
-                
+                this.sprite.remove() 
             }
         }
         return projectiles
