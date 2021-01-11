@@ -10,7 +10,7 @@ class Goal {
             this.sprite = createSprite(width / 2, height / 2, 50, 50);
             this.sprite.setCollider('circle', 0, 0, 105)
             this.speed = 8;
-            this.sprite.setSpeed(this.speed, 30);
+            this.sprite.setSpeed(this.speed, Math.random() * 360);
             this.sprite.addImage(snowBall); 
         }
 

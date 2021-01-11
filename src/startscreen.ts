@@ -16,9 +16,11 @@ class StartScreen {
     //     speed = 0;
     // }
     
-    public update() {
-        if (keyIsDown(32)) {
-            this.startGameCallback();
+    public update(gameState: GameState) {
+        if(gameState === 'Start'){
+            if (keyIsDown(32)) {
+                this.startGameCallback();
+            }
         }
 
         if (mouseIsPressed) {

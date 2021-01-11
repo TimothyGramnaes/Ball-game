@@ -23,7 +23,7 @@
     // }
     
 
-
+   
     draw() {
         this.paddle.position.x = mouseX;
         this.paddle.position.y = mouseY;

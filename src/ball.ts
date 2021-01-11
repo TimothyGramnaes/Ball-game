@@ -17,7 +17,7 @@ class Ball {
 
         this.ball.addImage(imageBall) 
         this.speed = 8;
-        this.ball.setSpeed(this.speed, -240)
+        this.ball.setSpeed(this.speed, Math.random() * 360)
         
         // this.velocity = createVector(this.speed, -this.speed);
        
@@ -29,14 +29,17 @@ class Ball {
     }
 
     bounce(sprite: any) {
-        this.ball.bounce(sprite)
+        
         this.ball.setSpeed(this.speed)
 
-        
-
-        if (this.ball.bounceWalls) {
+        if(this.ball.bounce(sprite)) {
             sounds.wallCollide.play();
         }
+         
+        
+        
+
+     
         // // Bounces the ball on left and right wall
         // if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
         //     this.maxSpeed.x *= -1;
@@ -59,8 +62,11 @@ class Ball {
     }
  
 
-    bounceWalls() {
- 
+    bounceWalls(sprite: any) {
+            if(this.ball.bounce(sprite)) {
+                sounds.wallCollide.play();
+            }
+
     }
 
 

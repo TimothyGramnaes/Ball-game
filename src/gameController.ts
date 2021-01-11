@@ -35,14 +35,15 @@ class GameController {
             
       
 
-            this.ball.bounce(this.walls.leftWall);
-            this.ball.bounce(this.walls.topWall);
-            this.ball.bounce(this.walls.rightWall);
-            this.ball.bounce(this.walls.bottomWall);
+            this.ball.bounceWalls(this.walls.leftWall);
+            this.ball.bounceWalls(this.walls.topWall);
+            this.ball.bounceWalls(this.walls.rightWall);
+            this.ball.bounceWalls(this.walls.bottomWall);
 
-    
-            //Bounce ball and paddle
+
             this.ball.bounce(this.paddle.paddle)
+            //Bounce ball and paddle
+            //this.ball.bounce(this.paddle.paddle)
     
             this.paddle.update();
 
@@ -53,7 +54,6 @@ class GameController {
             this.goal.bounce(this.walls.topWall);
             this.goal.bounce(this.walls.rightWall);
             this.goal.bounce(this.walls.bottomWall);
-            
             
             // Bounce goal with ball 
 

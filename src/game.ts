@@ -43,7 +43,7 @@ class TheGame {
 
     public update() {
 
-        this.startScreen.update();
+        this.startScreen.update(this.gameState);
         this.gameController.update(this.gameState, this.endGame);
         this.endScreen.update(this.gameState);    
     }
@@ -61,7 +61,7 @@ class TheGame {
          //    this.goal.sprite.setSpeed(0)
          //    this.ball.speed = 8
          //    this.goal.speed = 5
-         }
+         }  
     }
 }
 
