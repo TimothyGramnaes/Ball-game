@@ -38,30 +38,16 @@ class Goal {
 
              // Goal becomes faster after impact with the ball
             this.sprite.setSpeed(this.speed += 1)
-            sounds.goalCollide.play()
+
             if(this.sprite.scale < 0.2){
                 endGameCallback(true);
-                endGameCallback(false)
+                //endGameCallback(false)
                 this.sprite.remove()
                 
             }
         }
         return projectiles
     }
-
-
-    // goal becomes faster after collision with the ball
-    // goalAccelerate(sprite: any) {
-    //     if(this.goal.bounce(sprite)) {
-    //     }
-    // }
-    
-    // // creates projectiles from the goal after impact from the ball
-    // goalProjectiles(sprite: any) {
-    //     if(this.goal.bounce(sprite)) {
-
-    //     }
-    // }
 
     public setup() {
     }

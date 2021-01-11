@@ -1,6 +1,5 @@
  class Paddle {
     paddle: any
-    //ball: sprite
     positionX: number
     positionY: number
     //MAX_SPEED: number
@@ -8,8 +7,8 @@
     health1: any
     health2: any
     health3: any
+
     constructor() {
-        //this.MAX_SPEED = 0.5;
         this.positionX = width / 2; 
         this.positionY = height / 2;
         this.paddle = createSprite(this.positionX, this.positionY)
@@ -25,16 +24,7 @@
         this.health2.addImage(healthImage)
         this.health3.addImage(healthImage)
     }
-
-
-    // projectileCollision(sprite: any) {
-    //     if(this.paddle.bounce(sprite)){
-    //     this.paddle.scale -= 0.34
-    //     }
-    // }
     
-
-   
     draw() {
         this.paddle.position.x = mouseX;
         this.paddle.position.y = mouseY;
@@ -45,6 +35,8 @@
     }
 
     
-    update() {}
+    update() {
+        
+    }
 
 }
