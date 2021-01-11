@@ -24,7 +24,7 @@ let rightWall: p5.Image;
 let conf1: p5.Image;
 let conf2: p5.Image;
 let conf3: p5.Image;
-
+let sounds: ISound;
 
 
 
