@@ -1,3 +1,4 @@
+
 class Timer {
     millisecs: number;
     seconds: number;
@@ -67,3 +68,4 @@ class Timer {
         text('You lost!', 25, 50);
     }
 }
+

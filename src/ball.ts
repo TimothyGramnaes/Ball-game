@@ -30,6 +30,7 @@ class Ball {
 
     bounce(sprite: any) {
         this.ball.bounce(sprite)
+
         this.ball.setSpeed(this.speed)
 
         // // Bounces the ball on left and right wall
@@ -49,10 +50,10 @@ class Ball {
 
     // }
    
+
     public update() {
-        
-    }
- 
+      //  this.position.add(this.velocity);
+     }
 
     bounceWalls() {
  

@@ -32,8 +32,6 @@ class StartScreen {
             }
         } 
         this.prevIsDownP = keyIsDown(80) 
-        
-        // material icons volume_off
     
     }
 

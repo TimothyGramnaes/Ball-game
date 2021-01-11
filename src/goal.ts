@@ -39,7 +39,7 @@ class Goal {
 
              // Goal becomes faster after impact with the ball
             this.sprite.setSpeed(this.speed += 1)
-            sounds.goalCollide.play()
+
             if(this.sprite.scale < 0.2){
                 endGameCallback(true);
                 //endGameCallback(false)

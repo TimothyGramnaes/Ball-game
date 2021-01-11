@@ -1,10 +1,12 @@
 
+
 interface ISound {
     goalCollide: p5.SoundFile,
     projectileCollide: p5.SoundFile,
     backgroundMusic: p5.SoundFile
     gameOverMusic: p5.SoundFile
 }
+
 
 // //---- GLOBAL VARIABLES ----//
 
@@ -19,12 +21,17 @@ let bottomWall: p5.Image;
 let leftWall: p5.Image;
 let rightWall: p5.Image;
 
+let conf1: p5.Image;
 let conf2: p5.Image;
+let conf3: p5.Image;
+let sounds: ISound;
+
+
+
 
 
 let startGameImg: p5.Image;
 let playAgain: p5.Image;
-let sounds: ISound;
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -36,7 +43,13 @@ function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
-    conf2 = loadImage('./assets/images/conf2.png')
+  
+    conf1 = loadImage('./assets/images/conf2.png')
+    conf2 = loadImage('./assets/images/conf3.png')
+    conf3 = loadImage('./assets/images/conf4.png')
+
+   
+
 
     topWall = loadImage('./assets/images/topwall.png')
     bottomWall = loadImage('./assets/images/bottomwall.png')
@@ -46,12 +59,14 @@ function preload() {
     startGameImg = loadImage('./assets/images/startthegame.png')
     playAgain = loadImage('./assets/images/playagain.png')
 
+
     sounds = {
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),
         projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
         backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
         gameOverMusic: loadSound('./assets/music/gameover.mp3')
     }
+
 
 
     //     // Tyvärr har jag inte fått till den globala typningen för
@@ -73,12 +88,14 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
+
   
     // volume_up volume_off material icons
 
     sounds.backgroundMusic.play();
     sounds.backgroundMusic.setVolume(.08);
     sounds.backgroundMusic.setLoop(true)
+
 }
 
 // /**
