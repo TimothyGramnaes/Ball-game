@@ -32,7 +32,7 @@ class Ball {
         this.ball.setSpeed(this.speed)
 
         if(this.ball.bounce(sprite)) {
-            sounds.wallCollide.play();
+            sounds.ballCollide.play();
         }
          
         
@@ -48,7 +48,7 @@ class Ball {
 
     bounceWalls(sprite: any) {
             if(this.ball.bounce(sprite)) {
-                sounds.wallCollide.play();
+                sounds.ballCollide.play();
             }
     }    
 }

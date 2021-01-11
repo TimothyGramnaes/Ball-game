@@ -50,6 +50,7 @@ class TheGame {
             this.endScreen.draw();
 
          }
+    }
 }
 
         

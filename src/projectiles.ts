@@ -42,9 +42,6 @@ class Projectile {
             if(sprite.scale < 0.6) {
                 health3.addImage(dieImage)
             }
-
-
-            }
         }
     }
 
@@ -69,5 +66,5 @@ class Projectile {
         drawSprite(this.sprite)
 
     }
-    
+  
 }

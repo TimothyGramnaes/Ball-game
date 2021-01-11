@@ -5,6 +5,7 @@ interface ISound {
     projectileCollide: p5.SoundFile,
     backgroundMusic: p5.SoundFile
     gameOverMusic: p5.SoundFile
+    ballCollide: p5.SoundFile
 }
 
 
@@ -68,7 +69,8 @@ function preload() {
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),
         projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
         backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
-        gameOverMusic: loadSound('./assets/music/gameover.mp3')
+        gameOverMusic: loadSound('./assets/music/gameover.mp3'),
+        ballCollide: loadSound('./assets/music/ballcollision.mp3')
     }
 
 
