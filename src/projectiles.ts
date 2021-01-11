@@ -1,5 +1,4 @@
 class Projectile {
-    
     speed: number
     sprite: any
     conf: number
@@ -25,7 +24,7 @@ class Projectile {
         }
     }
 
-    paddleCollision(sprite: any, endGameCallback: Function) {
+    paddleCollision(sprite: any, endGameCallback: Function, health: any, health2: any, health3:any) {
         // Shrink paddle on collission with sprites
         if (this.sprite.bounce(sprite)) {
             sounds.projectileCollide.play()
@@ -33,6 +32,17 @@ class Projectile {
             if(sprite.scale < 0.6){
                 sprite.remove()
                 endGameCallback(false);
+            }
+            if(sprite.scale < 0.9) {
+                health.addImage(dieImage)
+            }
+            if(sprite.scale < 0.7) {
+                health2.addImage(dieImage)
+            }
+            if(sprite.scale < 0.6) {
+                health3.addImage(dieImage)
+            }
+
 
             }
         }

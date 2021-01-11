@@ -20,6 +20,8 @@ let topWall: p5.Image;
 let bottomWall: p5.Image;
 let leftWall: p5.Image;
 let rightWall: p5.Image;
+let healthImage: p5.Image;
+let dieImage: p5.Image;
 
 let conf1: p5.Image;
 let conf2: p5.Image;
@@ -59,6 +61,8 @@ function preload() {
     startGameImg = loadImage('./assets/images/startthegame.png')
     playAgain = loadImage('./assets/images/playagain.png')
 
+    healthImage = loadImage('./assets/images/heart.png')
+    dieImage = loadImage('./assets/images/die.png')
 
     sounds = {
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),
@@ -88,13 +92,14 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-
+    noCursor()
   
     // volume_up volume_off material icons
 
     sounds.backgroundMusic.play();
     sounds.backgroundMusic.setVolume(.08);
     sounds.backgroundMusic.setLoop(true)
+
 
 }
 

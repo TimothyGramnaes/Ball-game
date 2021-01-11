@@ -20,7 +20,7 @@ class GameController {
   
 
     public update(gameState: GameState, endGameCallback: Function) {
-       
+
         if(gameState !== 'Running') {
             this.ball.ball.setSpeed(0);
             this.goal.sprite.setSpeed(0);
@@ -30,14 +30,18 @@ class GameController {
             this.paddle.update();
             this.timer.update()
 
-            this.ball.bounce(this.walls.leftWall);
-            this.ball.bounce(this.walls.topWall);
-            this.ball.bounce(this.walls.rightWall);
-            this.ball.bounce(this.walls.bottomWall);
-          
-    
+
+            this.ball.bounceWalls(this.walls.leftWall);
+            this.ball.bounceWalls(this.walls.topWall);
+            this.ball.bounceWalls(this.walls.rightWall);
+            this.ball.bounceWalls(this.walls.bottomWall);
+
             //Bounce ball and paddle
             this.ball.bounce(this.paddle.paddle)
+    
+            this.paddle.update();
+
+
             
 
             // Bounce goal with walls
@@ -46,10 +50,9 @@ class GameController {
             this.goal.bounce(this.walls.rightWall);
             this.goal.bounce(this.walls.bottomWall);
             
-            
             // Bounce goal with ball 
 
-
+            this.timer.update();
             let projectiles = this.goal.ballCollision(this.ball.ball, endGameCallback)
             this.projectiles.push(...projectiles)
             
@@ -59,19 +62,18 @@ class GameController {
                 projectile.bounce(this.walls.rightWall);
                 projectile.bounce(this.walls.bottomWall);
                 
-                projectile.paddleCollision(this.paddle.paddle, endGameCallback)
+                projectile.paddleCollision(this.paddle.paddle, endGameCallback, this.paddle.health1, this.paddle.health2, this.paddle.health3)
                 projectile.ballCollision(this.ball.ball)
                 projectile.bounce(this.ball.ball)
                
             }
-            
+
+            this.ball.update() 
+          
             for(const projectile of this.projectiles){
                 projectile.update();
-            }
-            
-
-        }
-       
+            }      
+        }       
     }
   
     public draw(gameState: GameState) {

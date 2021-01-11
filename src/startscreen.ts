@@ -14,9 +14,11 @@ class StartScreen {
 
     
     
-    public update() {
-        if (keyIsDown(32)) {
-            this.startGameCallback();
+    public update(gameState: GameState) {
+        if(gameState === 'Start'){
+            if (keyIsDown(32)) {
+                this.startGameCallback();
+            }
         }
         
         let muteKeyWasPressed = !this.prevIsDownP && keyIsDown(80) 

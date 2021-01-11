@@ -35,9 +35,7 @@ class TheGame {
     }
 
     public update() {
-
-
-        this.startScreen.update();
+        this.startScreen.update(this.gameState);
         this.gameController.update(this.gameState, this.endGame);
         this.endScreen.update(this.gameState);    
     }
@@ -50,8 +48,8 @@ class TheGame {
         } 
         if(this.gameState === 'GameOver' || this.gameState === 'GameWon') {
             this.endScreen.draw();
+
          }
-    }
 }
 
         

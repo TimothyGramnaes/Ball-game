@@ -4,7 +4,6 @@ class Ball {
     radius: any
     position: any
     speed: number
-  
 
             
     constructor() {
@@ -16,7 +15,10 @@ class Ball {
 
         this.ball.addImage(imageBall) 
         this.speed = 8;
-        this.ball.setSpeed(this.speed, -240)   
+        this.ball.setSpeed(this.speed, Math.random() * 360)
+        
+        // this.velocity = createVector(this.speed, -this.speed);
+
     }
 
 
@@ -25,21 +27,28 @@ class Ball {
     }
 
     bounce(sprite: any) {
-        this.ball.bounce(sprite)
 
+        
         this.ball.setSpeed(this.speed)
+
+        if(this.ball.bounce(sprite)) {
+            sounds.wallCollide.play();
+        }
+         
+        
+        
+
+
+
     }
 
     public update() {
-    
+
     }
 
-    bounceWalls() {
- 
-    }
-
-
-
-
-    
+    bounceWalls(sprite: any) {
+            if(this.ball.bounce(sprite)) {
+                sounds.wallCollide.play();
+            }
+    }    
 }
