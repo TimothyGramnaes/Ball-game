@@ -1,5 +1,4 @@
 class Projectile {
-    
     speed: number
     sprite: any
 
@@ -15,11 +14,12 @@ class Projectile {
        // this.sprite.rotation -= 2
         // this.projectile2.setSpeed(this.speed, Math.random() * 359)
         // this.projectile3.setSpeed(this.speed, Math.random() * 359)
+       
 
         
     }
 
-    paddleCollision(sprite: any, endGameCallback: Function) {
+    paddleCollision(sprite: any, endGameCallback: Function, health: any, health2: any, health3:any) {
         // Shrink paddle on collission with sprites
         if (this.sprite.bounce(sprite)) {
             sprite.scale -= 0.2
@@ -27,6 +27,15 @@ class Projectile {
             if(sprite.scale < 0.6){
                 sprite.remove()
                 endGameCallback(false);
+            }
+            if(sprite.scale < 0.9) {
+                health.addImage(dieImage)
+            }
+            if(sprite.scale < 0.7) {
+                health2.addImage(dieImage)
+            }
+            if(sprite.scale < 0.6) {
+                health3.addImage(dieImage)
             }
 
         }

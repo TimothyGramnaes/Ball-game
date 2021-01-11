@@ -3,7 +3,6 @@
 class Goal {  
     sprite: any 
     speed: number
-  
         constructor() {
             this.speed = 10;
             
@@ -11,7 +10,7 @@ class Goal {
             this.sprite.setCollider('circle', 0, 0, 105)
             this.speed = 8;
             this.sprite.setSpeed(this.speed, Math.random() * 360);
-            this.sprite.addImage(snowBall); 
+            this.sprite.addImage(snowBall);  
         }
 
     // Gives the goal a starting speed
@@ -33,7 +32,7 @@ class Goal {
             projectiles.push(new Projectile(this))
             // Goal shrinks after impact with the ball
             this.sprite.scale -= 0.2
-
+            
 
             // Creates enemy projectiles after impact with the ball      
 
@@ -44,7 +43,7 @@ class Goal {
                 endGameCallback(true);
                 endGameCallback(false)
                 this.sprite.remove()
-            
+                
             }
         }
         return projectiles

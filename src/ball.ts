@@ -6,7 +6,7 @@ class Ball {
     // color: number
     speed: number
    // sprite: any
-
+ 
             
     constructor() {
         this.radius = 30
@@ -20,7 +20,6 @@ class Ball {
         this.ball.setSpeed(this.speed, Math.random() * 360)
         
         // this.velocity = createVector(this.speed, -this.speed);
-       
     }
 
 
@@ -58,7 +57,7 @@ class Ball {
     // }
    
     public update() {
-        
+       
     }
  
 

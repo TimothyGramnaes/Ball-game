@@ -22,7 +22,7 @@ class GameController {
   
 
     public update(gameState: GameState, endGameCallback: Function) {
-       
+
         if(gameState !== 'Running') {
             this.ball.ball.setSpeed(0);
             this.goal.sprite.setSpeed(0);
@@ -57,7 +57,7 @@ class GameController {
             
             // Bounce goal with ball 
 
-
+            this.timer.update();
             let projectiles = this.goal.ballCollision(this.ball.ball, endGameCallback)
 
             this.projectiles.push(...projectiles)
@@ -67,12 +67,12 @@ class GameController {
                 projectile.bounce(this.walls.rightWall);
                 projectile.bounce(this.walls.bottomWall);
                 
-                projectile.paddleCollision(this.paddle.paddle, endGameCallback)
+                projectile.paddleCollision(this.paddle.paddle, endGameCallback, this.paddle.health1, this.paddle.health2, this.paddle.health3)
                 projectile.ballCollision(this.ball.ball)
                 projectile.bounce(this.ball.ball)
                 //projectile.rotation -= 2
             }
-            this.timer.update();
+            this.ball.update()
             
             
             for(const projectile of this.projectiles){
