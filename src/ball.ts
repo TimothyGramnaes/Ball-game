@@ -28,10 +28,6 @@ class Ball {
         drawSprite(this.ball);
     }
 
-    setBallStartSpeed() {
-        this.ball.setSpeed(this.speed)
-    }
-
     bounce(sprite: any) {
         this.ball.bounce(sprite)
 
