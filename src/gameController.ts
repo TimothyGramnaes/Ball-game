@@ -80,12 +80,6 @@ class GameController {
         if(gameState === 'Running') {
             this.timer.drawTimer();
         }
-        if(gameState === 'GameOver') {
-            this.timer.drawLost();
-        }
-        if(gameState === 'GameWon') {
-            this.timer.drawWon();
-        }
         for(const projectile of this.projectiles){
             projectile.draw();
         }
@@ -94,6 +88,12 @@ class GameController {
         this.goal.draw()
         this.walls.draw()
         this.goal.draw();
-
+        
+        if(gameState === 'GameOver') {
+            this.timer.drawLost();
+        }
+        if(gameState === 'GameWon') {
+            this.timer.drawWon();
+        }
     }
 }
