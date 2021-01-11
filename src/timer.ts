@@ -54,7 +54,7 @@ class Timer {
         fill(132,165,157);
         textSize(28);
         textFont ('Quicksand');
-        text('TJOOOO', 25, 50);
+        text('WINNER!', 25, 50);
 
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
     }
@@ -64,6 +64,6 @@ class Timer {
         fill(132,165,157);
         textSize(28);
         textFont ('Quicksand');
-        text('LOSER', 25, 50);
+        text('You lost!', 25, 50);
     }
 }
