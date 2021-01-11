@@ -25,6 +25,10 @@ let conf2: p5.Image;
 let startGameImg: p5.Image;
 let playAgain: p5.Image;
 let sounds: ISound;
+
+let volumeUp: p5.Image; 
+let volumeOff: p5.Image; 
+
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -37,6 +41,8 @@ function preload() {
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
     conf2 = loadImage('./assets/images/conf2.png')
+    volumeUp = loadImage('./assets/images/volume_up.png')
+    volumeOff = loadImage('./assets/images/volume_off.png')
 
     topWall = loadImage('./assets/images/topwall.png')
     bottomWall = loadImage('./assets/images/bottomwall.png')
@@ -45,6 +51,7 @@ function preload() {
 
     startGameImg = loadImage('./assets/images/startthegame.png')
     playAgain = loadImage('./assets/images/playagain.png')
+
 
     sounds = {
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),

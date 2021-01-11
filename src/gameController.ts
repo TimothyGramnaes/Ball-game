@@ -5,6 +5,7 @@ class GameController {
     private paddle: Paddle;
     private ball: Ball; 
     private goal: Goal;
+    private volumeButton: volumeButton;
     //private isGameRunning: boolean;
     //private gameOver: boolean;
     public walls: Walls;
@@ -16,6 +17,7 @@ class GameController {
         this.goal = new Goal(); 
         this.projectiles = []
         this.timer = new Timer();
+        this.volumeButton = new volumeButton();
     }
 
 
@@ -26,27 +28,19 @@ class GameController {
         if(gameState !== 'Running') {
             this.ball.ball.setSpeed(0);
             this.goal.sprite.setSpeed(0);
-
-             
- 
             
         } else{
             this.ball.update();
-            
-      
-
+                
             this.ball.bounce(this.walls.leftWall);
             this.ball.bounce(this.walls.topWall);
             this.ball.bounce(this.walls.rightWall);
             this.ball.bounce(this.walls.bottomWall);
-
     
             //Bounce ball and paddle
             this.ball.bounce(this.paddle.paddle)
     
-            this.paddle.update();
-
-            
+            this.paddle.update();           
             
             // Bounce goal with walls
             this.goal.bounce(this.walls.leftWall);
@@ -94,6 +88,7 @@ class GameController {
         this.goal.draw()
         this.walls.draw()
         this.goal.draw();
+        this.volumeButton.draw();
 
         
         // if(gameOver) {  
