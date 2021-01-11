@@ -12,18 +12,6 @@ class Timer {
         this.start = true;
     }
 
-    // startTimer() {
-    //     if(this.start == false) {
-    //         (this.start = true)
-    //     }
-    // }
-
-    // stopTimer() {
-    //     if(this.start == true) {
-    //         (this.start = false)
-    //     }
-    // }
-
     update() {
         if(this.start){
             if (int(millis()/100)  % 10 != this.millisecs){
@@ -50,6 +38,7 @@ class Timer {
 
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
     }
+    
     drawWon() {  
         textAlign(LEFT);
         fill(132,165,157);

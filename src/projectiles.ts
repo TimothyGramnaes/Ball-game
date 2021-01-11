@@ -4,8 +4,6 @@ class Projectile {
     sprite: any
     conf: number
 
-
-
     constructor(goal: Goal) {
         this.speed = 5;
         this.sprite = createSprite(goal.sprite.position.x, goal.sprite.position.y, 20, 20)
@@ -25,12 +23,6 @@ class Projectile {
         } if (this.conf == 3) {
             this.sprite.addImage(conf3); 
         }
-
-       // this.sprite.rotation -= 2
-        // this.projectile2.setSpeed(this.speed, Math.random() * 359)
-        // this.projectile3.setSpeed(this.speed, Math.random() * 359)
-
-        
     }
 
     paddleCollision(sprite: any, endGameCallback: Function) {
@@ -43,9 +35,7 @@ class Projectile {
                 endGameCallback(false);
 
             }
-
         }
-
     }
 
     ballCollision(sprite: any) {

@@ -1,21 +1,18 @@
 class StartScreen {
     private startGameCallback: Function
 
-    //private text: string 
+   
     private startGameImg: any
     private prevIsDownP: boolean
 
     constructor(startGameCallback: Function) {
         this.startGameCallback = startGameCallback;
-        //this.text = 'Please press SPACE to start the game'
         this.startGameImg = createSprite(width / 2, height - 400, 100, 100);
         this.startGameImg.addImage(startGameImg);
         this.prevIsDownP = false; 
     }
 
-    // pause(speed:any){
-    //     speed = 0;
-    // }
+    
     
     public update() {
         if (keyIsDown(32)) {
@@ -31,8 +28,8 @@ class StartScreen {
 
             }
         } 
+
         this.prevIsDownP = keyIsDown(80) 
-    
     }
 
     public draw() {

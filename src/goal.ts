@@ -50,20 +50,6 @@ class Goal {
         return projectiles
     }
 
-
-    // goal becomes faster after collision with the ball
-    // goalAccelerate(sprite: any) {
-    //     if(this.goal.bounce(sprite)) {
-    //     }
-    // }
-    
-    // // creates projectiles from the goal after impact from the ball
-    // goalProjectiles(sprite: any) {
-    //     if(this.goal.bounce(sprite)) {
-
-    //     }
-    // }
-
     public setup() {
     }
 
