@@ -57,11 +57,11 @@ class Timer {
 
 
     drawLost() {
-        textAlign(LEFT);
+        textAlign(CENTER);
         fill(228, 137, 133);
         textSize(60);
         textFont ('Quicksand');
-        text('YOU LOST', width / 2.5, 115);
+        text('YOU LOST', width / 2, 115);
     }
 }
 

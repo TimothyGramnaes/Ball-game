@@ -71,8 +71,8 @@ class GameController {
             textFont ('Quicksand');
             fill(132,165,157)
             textSize(28);
-            text(this.score, width - 80, 100);
-            text('Score:', width - 180, 100);
+            text(this.score, width - 50, 90);
+            text('Score:', width - 135, 90);
             for(const projectile of this.projectiles){
                 projectile.update();
             }      
