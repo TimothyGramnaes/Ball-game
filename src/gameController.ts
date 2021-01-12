@@ -5,7 +5,7 @@ class GameController {
     private ball: Ball; 
     private goal: Goal;
     private timer: Timer;
-    
+    private score: number
     public walls: Walls;
     constructor() {  
         this.ball = new Ball();
@@ -14,10 +14,9 @@ class GameController {
         this.goal = new Goal(); 
         this.timer = new Timer();
         this.projectiles = []
+        this.score = 0;
     }
-
-
-  
+    
 
     public update(gameState: GameState, endGameCallback: Function) {
 
@@ -53,7 +52,7 @@ class GameController {
             // Bounce goal with ball 
 
             this.timer.update();
-            let projectiles = this.goal.ballCollision(this.ball.ball, endGameCallback)
+            let projectiles = this.goal.ballCollision(this.ball.ball, endGameCallback, this.addScoreGoal)
             this.projectiles.push(...projectiles)
             
             for(const projectile of this.projectiles) {
@@ -63,17 +62,29 @@ class GameController {
                 projectile.bounce(this.walls.bottomWall);
                 
                 projectile.paddleCollision(this.paddle.paddle, endGameCallback, this.paddle.health1, this.paddle.health2, this.paddle.health3)
-                projectile.ballCollision(this.ball.ball)
+                projectile.ballCollision(this.ball.ball, this.addScoreProjectiles)
                 projectile.bounce(this.ball.ball)
-               
+                
             }
 
             this.ball.update() 
-          
+            fill(132,165,157)
+            textSize(28);
+            text(this.score, width - 80, 100);
+            text('Score:', width - 180, 100);
             for(const projectile of this.projectiles){
                 projectile.update();
             }      
         }       
+    }
+
+    addScoreProjectiles = () =>{
+        this.score = this.score +=1
+        this.score.toString()
+    }
+    addScoreGoal = () =>{
+        this.score = this.score +=5
+        this.score.toString()
     }
   
     public draw(gameState: GameState) {
@@ -84,7 +95,7 @@ class GameController {
             this.timer.drawLost();
         }
         if(gameState === 'GameWon') {
-            this.timer.drawWon();
+            this.timer.drawWon(this.score);
         }
         for(const projectile of this.projectiles){
             projectile.draw();
