@@ -51,6 +51,9 @@ declare global {
 
     function drawSprite(sprite: any): void
     function drawSprites(): void
+    function masterVolume(volume:number, rampTime?:number, timeFromNow?:number): void
+    function userStartAudio(): void
+
 }
 
 

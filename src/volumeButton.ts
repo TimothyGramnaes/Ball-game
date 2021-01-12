@@ -7,21 +7,23 @@ class volumeButton {
         this.prevIsDownP = false; 
 
         this.currentVolumeIcon = createSprite(width / 2, 40, 30, 30);
-        this.currentVolumeIcon.addImage(volumeOff)
+        this.currentVolumeIcon.addImage(volumeUp)
     }
 
     public update() {
 
         // if previous P button hasen't been klicked and P button is pressed do this: 
                 
-        let muteKeyWasPressed = !this.prevIsDownP && keyIsDown(80) || keyIsDown(32)
+        let muteKeyWasPressed = !this.prevIsDownP && keyIsDown(80)
         if (muteKeyWasPressed) {
             if (sounds.backgroundMusic.isPlaying()) {
                 sounds.backgroundMusic.pause()
+                masterVolume(0)
                 this.currentVolumeIcon.addImage(volumeOff)
             } else {
                 sounds.backgroundMusic.play()
                 this.currentVolumeIcon.addImage(volumeUp)
+                masterVolume(1)
             }
         } 
         this.prevIsDownP = keyIsDown(80) 
