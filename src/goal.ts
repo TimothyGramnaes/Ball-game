@@ -3,15 +3,14 @@
 class Goal {  
     sprite: any 
     speed: number
-  
         constructor() {
             this.speed = 10;
             
             this.sprite = createSprite(width / 2, height / 2, 50, 50);
             this.sprite.setCollider('circle', 0, 0, 105)
             this.speed = 8;
-            this.sprite.setSpeed(this.speed, 30);
-            this.sprite.addImage(snowBall); 
+            this.sprite.setSpeed(this.speed, Math.random() * 360);
+            this.sprite.addImage(snowBall);  
         }
 
     // Gives the goal a starting speed
@@ -24,7 +23,7 @@ class Goal {
 
 
     // Goal collides with the ball, shrinks, gets faster and creates enemies
-    ballCollision(sprite: any, endGameCallback: Function) {
+    ballCollision(sprite: any, endGameCallback: Function, ballCollisionCallback: Function) {
         let projectiles: Projectile[] = []
         if(this.sprite.bounce(sprite)){
             projectiles.push(new Projectile(this))
@@ -32,37 +31,23 @@ class Goal {
             projectiles.push(new Projectile(this))
             projectiles.push(new Projectile(this))
             // Goal shrinks after impact with the ball
-            this.sprite.scale -= 0.2
-
+            this.sprite.scale -= 0.1
+            sounds.goalCollide.play();
+            ballCollisionCallback();
 
             // Creates enemy projectiles after impact with the ball      
 
              // Goal becomes faster after impact with the ball
             this.sprite.setSpeed(this.speed += 1)
-            sounds.goalCollide.play()
-            if(this.sprite.scale < 0.2){
+
+            if(this.sprite.scale < 0.9){
                 endGameCallback(true);
-                endGameCallback(false)
-                this.sprite.remove()
-            
+                //endGameCallback(false)
+                this.sprite.remove() 
             }
         }
         return projectiles
     }
-
-
-    // goal becomes faster after collision with the ball
-    // goalAccelerate(sprite: any) {
-    //     if(this.goal.bounce(sprite)) {
-    //     }
-    // }
-    
-    // // creates projectiles from the goal after impact from the ball
-    // goalProjectiles(sprite: any) {
-    //     if(this.goal.bounce(sprite)) {
-
-    //     }
-    // }
 
     public setup() {
     }

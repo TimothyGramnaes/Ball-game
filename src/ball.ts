@@ -3,9 +3,7 @@ class Ball {
     ball: any
     radius: any
     position: any
-    // color: number
     speed: number
-   // sprite: any
 
             
     constructor() {
@@ -16,11 +14,11 @@ class Ball {
         this.ball.setCollider('circle', 0, 0, 27); 
 
         this.ball.addImage(imageBall) 
-        this.speed = 8;
-        this.ball.setSpeed(this.speed, -240)
+        this.speed = 10;
+        this.ball.setSpeed(this.speed, Math.random() * 360)
         
         // this.velocity = createVector(this.speed, -this.speed);
-       
+
     }
 
 
@@ -29,37 +27,28 @@ class Ball {
     }
 
     bounce(sprite: any) {
-        this.ball.bounce(sprite)
+
+        
         this.ball.setSpeed(this.speed)
 
-        // // Bounces the ball on left and right wall
-        // if (this.position.x > width - (this.radius / 2) - 10 || this.position.x < (this.radius /2) +10) {
-        //     this.maxSpeed.x *= -1;
-        // } 
-        // // Bounces the ball on the top and bottom wall
-        // if (this.position.y > height - (this.radius / 2) - 10 || this.position.y < (this.radius / 2) + 10) {
-        //     this.maxSpeed.y *= -1;
-        // }
-    }
-
-    // projectileCollision(sprite: any) {
-    //     if (this.ball.bounce(sprite)) {
-    //         console.log('hej')
-    //     }
-
-    // }
-   
-    public update() {
+        if(this.ball.bounce(sprite)) {
+            sounds.ballCollide.play();
+        }
+         
         
+        
+
+
+
     }
- 
 
-    bounceWalls() {
- 
+    public update() {
+
     }
 
-
-
-
-    
+    bounceWalls(sprite: any) {
+            if(this.ball.bounce(sprite)) {
+                sounds.ballCollide.play();
+            }
+    }    
 }
