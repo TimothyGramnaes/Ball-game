@@ -24,6 +24,11 @@ class volumeButton {
                 this.currentVolumeIcon.addImage(volumeUp)
             }
         } 
+        if (keyIsDown(13) && sounds.backgroundMusic.isPlaying()) {
+            this.currentVolumeIcon.addImage(volumeUp)
+        } else if (keyIsDown(13) && sounds.backgroundMusic.isPaused()) {
+            this.currentVolumeIcon.addImage(volumeOff)
+        }
         this.prevIsDownP = keyIsDown(80) 
         
         // getMasterVolume()
