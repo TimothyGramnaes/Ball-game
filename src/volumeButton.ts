@@ -1,20 +1,13 @@
 class volumeButton {
 
-    private prevIsDownP: boolean
-    private volumeUp: any
-    private volumeOff: any
-
-    private currentVolumeIcon: any
+    private prevIsDownP: boolean;
+    private currentVolumeIcon: any;
 
     constructor() {
         this.prevIsDownP = false; 
-        this.currentVolumeIcon = createSprite(width / 2, 40, 40, 40);
-        this.currentVolumeIcon = this.volumeUp || this.volumeOff
 
-        // this.volumeUp.addImage(volumeUp)
-
-        // this.volumeOff = createSprite(width / 1.4, 40, 40, 40); 
-        // this.volumeOff.addImage(volumeOff)
+        this.currentVolumeIcon = createSprite(width / 2, 40, 30, 30);
+        this.currentVolumeIcon.addImage(volumeOff)
     }
 
     public update() {
@@ -25,11 +18,10 @@ class volumeButton {
         if (muteKeyWasPressed) {
             if (sounds.backgroundMusic.isPlaying()) {
                 sounds.backgroundMusic.pause()
-                // this.currentVolumeIcon = volumeUp
-                
+                this.currentVolumeIcon.addImage(volumeOff)
             } else {
                 sounds.backgroundMusic.play()
-                // this.currentVolumeIcon = volumeOff
+                this.currentVolumeIcon.addImage(volumeUp)
             }
         } 
         this.prevIsDownP = keyIsDown(80) 
