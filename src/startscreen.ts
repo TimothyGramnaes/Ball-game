@@ -8,6 +8,7 @@ class StartScreen {
         this.startGameCallback = startGameCallback;
         this.startGameImg = createSprite(width / 2, height / 2, 100, 100);
         this.startGameImg.addImage(startGameImg);
+        startGameImg.resize(600,700);
     }
 
     

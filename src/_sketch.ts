@@ -62,7 +62,7 @@ function preload() {
     leftWall = loadImage('./assets/images/leftwall.png')
     rightWall = loadImage('./assets/images/rightwall.png')
 
-    startGameImg = loadImage('./assets/images/startthegame.png')
+    startGameImg = loadImage('./assets/images/play.png')
     playAgain = loadImage('./assets/images/playagain.png')
 
     healthImage = loadImage('./assets/images/heart.png')
