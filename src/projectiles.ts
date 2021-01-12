@@ -2,12 +2,10 @@ class Projectile {
     speed: number
     sprite: any
     conf: number
-
     constructor(goal: Goal) {
         this.speed = 5;
         this.sprite = createSprite(goal.sprite.position.x, goal.sprite.position.y, 20, 20)
         this.sprite.setSpeed(this.speed, Math.random() * 359)
-    
 
         this.sprite.setCollider('circle', 0, 0, 10);
         conf1.resize(0, 40);
@@ -45,9 +43,11 @@ class Projectile {
         }
     }
 
-    ballCollision(sprite: any) {
+    ballCollision(sprite: any, setScoreCallback: Function) {
         if (this.sprite.bounce(sprite)) {
             this.sprite.remove()
+            setScoreCallback(); 
+            sounds.projectileCollect.play();  
         }
     }
     

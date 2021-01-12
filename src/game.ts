@@ -48,8 +48,7 @@ class TheGame {
         } 
         if(this.gameState === 'GameOver' || this.gameState === 'GameWon') {
             this.endScreen.draw();
-
-         }
+        }
     }
 }
 

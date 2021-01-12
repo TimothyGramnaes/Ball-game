@@ -14,7 +14,7 @@ class Ball {
         this.ball.setCollider('circle', 0, 0, 27); 
 
         this.ball.addImage(imageBall) 
-        this.speed = 8;
+        this.speed = 10;
         this.ball.setSpeed(this.speed, Math.random() * 360)
         
         // this.velocity = createVector(this.speed, -this.speed);
