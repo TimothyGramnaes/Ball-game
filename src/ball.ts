@@ -5,6 +5,7 @@ class Ball {
     private speed: number;
 
     constructor() {
+        imageBall.resize(65, 65)
         this.radius = 30;
         this.ball = createSprite(200, 200, this.radius, this.radius);
         this.ball.setCollider('circle', 0, 0, 27);
