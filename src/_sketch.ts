@@ -48,7 +48,7 @@ let volumeOff: p5.Image;
   
 function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
-    imageBall = loadImage('./assets/images/ball.png')
+    imageBall = loadImage('./assets/images/ball1.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
 
     conf1 = loadImage('./assets/images/conf2.png')
