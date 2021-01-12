@@ -1,12 +1,13 @@
 
 
 interface ISound {
+    backgroundMusic: p5.SoundFile,
     goalCollide: p5.SoundFile,
     projectileCollide: p5.SoundFile,
-    backgroundMusic: p5.SoundFile
-    gameOverMusic: p5.SoundFile
-    ballCollide: p5.SoundFile
-    projectileCollect: p5.SoundFile
+    ballCollide: p5.SoundFile,
+    projectileCollect: p5.SoundFile,
+    applause: p5.SoundFile,
+    gameOver: p5.SoundFile,
 }
 
 
@@ -36,6 +37,8 @@ let sounds: ISound;
 
 let startGameImg: p5.Image;
 let playAgain: p5.Image;
+let volumeUp: p5.Image; 
+let volumeOff: p5.Image; 
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -47,13 +50,12 @@ function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
-  
+
     conf1 = loadImage('./assets/images/conf2.png')
     conf2 = loadImage('./assets/images/conf3.png')
     conf3 = loadImage('./assets/images/conf4.png')
-
-   
-
+    volumeUp = loadImage('./assets/images/volume_up.png')
+    volumeOff = loadImage('./assets/images/volume_off.png')
 
     topWall = loadImage('./assets/images/topwall.png')
     bottomWall = loadImage('./assets/images/bottomwall.png')
@@ -67,12 +69,14 @@ function preload() {
     dieImage = loadImage('./assets/images/die.png')
 
     sounds = {
-        goalCollide: loadSound('./assets/music/goalcrash.mp3'),
-        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
         backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
-        gameOverMusic: loadSound('./assets/music/gameover.mp3'),
-        ballCollide: loadSound('./assets/music/ballcollision.mp3'),
-        projectileCollect: loadSound('./assets/music/score.wav')
+        goalCollide: loadSound('./assets/music/goalcrash.mp3'),
+        applause: loadSound('./assets/music/applause.wav'),
+        gameOver: loadSound('./assets/music/oohNoo.wav'),
+        
+        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
+        ballCollide: loadSound('./assets/music/ballonWalls.wav'),
+        projectileCollect: loadSound('./assets/music/ballOnConfetti.wav'),
     }
 
 
@@ -96,10 +100,10 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-    noCursor()
-  
-    // volume_up volume_off material icons
 
+    noCursor();
+    
+    (window as any).getAudioContext().suspend();
     sounds.backgroundMusic.play();
     sounds.backgroundMusic.setVolume(.08);
     sounds.backgroundMusic.setLoop(true)
@@ -121,4 +125,8 @@ function draw() {
 //  */
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+}
+
+function keyPressed() {
+    userStartAudio(); 
 }

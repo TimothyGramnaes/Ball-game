@@ -8,13 +8,12 @@ class EndScreen {
         this.playAgain.addImage(playAgain);
     }
 
-   
     public update(gameState: GameState) {
-        if(gameState === 'GameOver'  || gameState === 'GameWon'){
+        if (gameState === 'GameOver' || gameState === 'GameWon') {
             if (keyIsDown(13)) {
-                this.restartGameCallback(); 
+                this.restartGameCallback();
             }
-        } 
+        }
     }
 
     public draw() {
