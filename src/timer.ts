@@ -42,21 +42,26 @@ class Timer {
     drawWon(score: number) {  
         textAlign(LEFT);
         fill(132,165,157);
-        textSize(28);
+        textSize(60);
         textFont ('Quicksand');
-        text('WINNER!', 25, 50);
+    
+        text('WINNER!', width / 2.5, 80);
+        textSize(40);
+        text('Your time', width / 2.4, 115);
+        text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , width / 2.3, 152);
         text('Score:', width / 2 -83, 70)
         text(score, width / 2, 70)
-        text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
+      
+
     }
 
 
     drawLost() {
         textAlign(LEFT);
-        fill(132,165,157);
-        textSize(28);
+        fill(228, 137, 133);
+        textSize(60);
         textFont ('Quicksand');
-        text('You lost!', 25, 50);
+        text('YOU LOST', width / 2.5, 115);
     }
 }
 
