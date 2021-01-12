@@ -95,8 +95,7 @@ class GameController {
             this.timer.drawLost();
         }
         if(gameState === 'GameWon') {
-            this.timer.drawWon();
-
+            this.timer.drawWon(this.score);
         }
         for(const projectile of this.projectiles){
             projectile.draw();

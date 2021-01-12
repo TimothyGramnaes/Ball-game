@@ -39,15 +39,17 @@ class Timer {
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
     }
     
-    drawWon() {  
+    drawWon(score: number) {  
         textAlign(LEFT);
         fill(132,165,157);
         textSize(28);
         textFont ('Quicksand');
         text('WINNER!', 25, 50);
-
+        text('Score:', width / 2 -83, 70)
+        text(score, width / 2, 70)
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
     }
+
 
     drawLost() {
         textAlign(LEFT);
