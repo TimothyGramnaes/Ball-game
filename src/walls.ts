@@ -30,8 +30,7 @@ class Walls {
         drawSprite(this.topWall);
         drawSprite(this.rightWall);        
         drawSprite(this.leftWall);
-        drawSprite(this.bottomWall);
-        
+        drawSprite(this.bottomWall);  
     }
     
 }

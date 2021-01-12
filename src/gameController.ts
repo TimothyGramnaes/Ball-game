@@ -6,9 +6,12 @@ class GameController {
     private volumeButton: volumeButton;
     private timer: Timer;
     private score: number
-    public walls: Walls;
+    private walls: Walls;
+   
+
 
     constructor() {
+
         this.ball = new Ball();
         this.walls = new Walls();
         this.paddle = new Paddle();
@@ -63,11 +66,16 @@ class GameController {
             textSize(28);
             text(this.score, width - 50, 90);
             text('Score:', width - 135, 90);
-            for (const projectile of this.projectiles) {
+            textSize(18)
+            text('HigScore:', width - 135, 120);
+            text(localStorage.getItem('HighScore'), width - 50, 120);
+            for(const projectile of this.projectiles){
+
                 projectile.update();
             }
         }
     }
+
 
     addScoreProjectiles = () => {
         this.score = this.score += 1
@@ -97,8 +105,14 @@ class GameController {
         if (gameState === 'GameOver') {
             this.timer.drawLost();
         }
-        if (gameState === 'GameWon') {
-            this.timer.drawWon(this.score);
+
+        if(gameState === 'GameWon') {
+            let highScore = localStorage.getItem('HighScore') || 0; 
+            if(this.score > highScore) {
+                localStorage.setItem('HighScore', this.score.toString())
+            }
+            this.timer.drawWon(this.score);   
+
         }
     }
 }

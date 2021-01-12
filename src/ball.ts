@@ -1,4 +1,5 @@
 class Ball {
+
     public ball: any;
     private radius: number;
     private speed: number;
@@ -22,6 +23,8 @@ class Ball {
             sounds.ballCollide.play();
         }
     }
+
+
 
     bounceWalls(sprite: any) {
         if (this.ball.bounce(sprite)) {
