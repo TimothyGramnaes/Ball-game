@@ -2,29 +2,26 @@ type GameState = 'Start' | 'Running' | 'GameOver' | 'GameWon'
 class TheGame {
     private endScreen: EndScreen;
     private gameController: GameController;
-    
     private gameState: GameState;
     private startScreen: StartScreen;
-   
+
     constructor() {
         this.gameState = 'Start';
         this.startScreen = new StartScreen(this.startGame);
         this.endScreen = new EndScreen(this.restartGame);
-        this.gameController = new GameController();    
+        this.gameController = new GameController();
     }
 
-
-    
     private startGame = () => {
-        this.gameState = 'Running'; 
+        this.gameState = 'Running';
         this.gameController = new GameController();
-        console.log(this)  
+        console.log(this)
     }
 
     private endGame = (isWon: boolean) => {
-        if(isWon){
+        if (isWon) {
             this.gameState = 'GameWon'
-        }else {
+        } else {
             this.gameState = 'GameOver';
         }
     }
@@ -37,21 +34,20 @@ class TheGame {
     public update() {
         this.startScreen.update(this.gameState);
         this.gameController.update(this.gameState, this.endGame);
-        this.endScreen.update(this.gameState);    
+        this.endScreen.update(this.gameState);
     }
-    
-  
+
     public draw() {
         this.gameController.draw(this.gameState);
         if (this.gameState === 'Start') {
             this.startScreen.draw();
-        } 
-        if(this.gameState === 'GameOver' || this.gameState === 'GameWon') {
+        }
+        if (this.gameState === 'GameOver' || this.gameState === 'GameWon') {
             this.endScreen.draw();
         }
     }
 }
 
-        
+
 
 
