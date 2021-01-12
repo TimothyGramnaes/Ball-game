@@ -68,6 +68,7 @@ class GameController {
             }
 
             this.ball.update() 
+            textFont ('Quicksand');
             fill(132,165,157)
             textSize(28);
             text(this.score, width - 80, 100);

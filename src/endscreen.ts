@@ -4,7 +4,7 @@ class EndScreen {
 
     constructor(restartGameCallback: Function) {
         this.restartGameCallback = restartGameCallback;
-        this.playAgain = createSprite(width / 2, height - 400, 100, 100);
+        this.playAgain = createSprite(width / 2, height / 2, 100, 100);
         this.playAgain.addImage(playAgain);
     }
 

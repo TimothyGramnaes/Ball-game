@@ -40,7 +40,7 @@ class Goal {
              // Goal becomes faster after impact with the ball
             this.sprite.setSpeed(this.speed += 1)
 
-            if(this.sprite.scale < 0.1){
+            if(this.sprite.scale < 0.9){
                 endGameCallback(true);
                 //endGameCallback(false)
                 this.sprite.remove() 

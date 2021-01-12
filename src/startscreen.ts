@@ -7,7 +7,7 @@ class StartScreen {
 
     constructor(startGameCallback: Function) {
         this.startGameCallback = startGameCallback;
-        this.startGameImg = createSprite(width / 2, height - 400, 100, 100);
+        this.startGameImg = createSprite(width / 2, height / 2, 100, 100);
         this.startGameImg.addImage(startGameImg);
         this.prevIsDownP = false; 
     }
