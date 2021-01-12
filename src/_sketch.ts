@@ -36,6 +36,8 @@ let sounds: ISound;
 
 let startGameImg: p5.Image;
 let playAgain: p5.Image;
+let volumeUp: p5.Image; 
+let volumeOff: p5.Image; 
 // /**
 //  * Built in preload function in P5
 //  * This is a good place to load assets such as
@@ -47,13 +49,12 @@ function preload() {
     snowBall = loadImage('./assets/images/goal.png'); //målet
     imageBall = loadImage('./assets/images/ball.png')
     imagePaddle = loadImage('./assets/images/paddle.png')
-  
+
     conf1 = loadImage('./assets/images/conf2.png')
     conf2 = loadImage('./assets/images/conf3.png')
     conf3 = loadImage('./assets/images/conf4.png')
-
-   
-
+    volumeUp = loadImage('./assets/images/volume_up.png')
+    volumeOff = loadImage('./assets/images/volume_off.png')
 
     topWall = loadImage('./assets/images/topwall.png')
     bottomWall = loadImage('./assets/images/bottomwall.png')
@@ -96,11 +97,10 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-    noCursor()
-  
-    // volume_up volume_off material icons
 
-    sounds.backgroundMusic.play();
+    noCursor()
+
+    sounds.backgroundMusic.pause();
     sounds.backgroundMusic.setVolume(.08);
     sounds.backgroundMusic.setLoop(true)
 

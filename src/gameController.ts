@@ -4,26 +4,27 @@ class GameController {
     private paddle: Paddle;
     private ball: Ball; 
     private goal: Goal;
+    private volumeButton: volumeButton;
     private timer: Timer;
     private score: number
     public walls: Walls;
+  
     constructor() {  
         this.ball = new Ball();
         this.walls = new Walls();
         this.paddle = new Paddle();        
         this.goal = new Goal(); 
         this.timer = new Timer();
+        this.volumeButton = new volumeButton();
         this.projectiles = []
         this.score = 0;
     }
     
-
     public update(gameState: GameState, endGameCallback: Function) {
 
         if(gameState !== 'Running') {
             this.ball.ball.setSpeed(0);
             this.goal.sprite.setSpeed(0);
-
         } else{
             this.ball.update();
             this.paddle.update();
@@ -39,9 +40,6 @@ class GameController {
             this.ball.bounce(this.paddle.paddle)
     
             this.paddle.update();
-
-
-            
 
             // Bounce goal with walls
             this.goal.bounce(this.walls.leftWall);
@@ -67,6 +65,7 @@ class GameController {
                 
             }
 
+            this.volumeButton.update();
             this.ball.update() 
             textFont ('Quicksand');
             fill(132,165,157)
@@ -101,6 +100,8 @@ class GameController {
         this.goal.draw()
         this.walls.draw()
         this.goal.draw();
+        this.volumeButton.draw();
+
         
         if(gameState === 'GameOver') {
             this.timer.drawLost();
