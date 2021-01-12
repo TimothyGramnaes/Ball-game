@@ -1,11 +1,8 @@
-// import { Image } from "p5";
-
 class Goal {  
     sprite: any 
     speed: number
         constructor() {
             this.speed = 10;
-            
             this.sprite = createSprite(width / 2, height / 2, 50, 50);
             this.sprite.setCollider('circle', 0, 0, 105)
             this.speed = 8;
@@ -20,7 +17,6 @@ class Goal {
         this.sprite.bounce(sprite)
         this.sprite.setSpeed(this.speed)
     }
-
 
     // Goal collides with the ball, shrinks, gets faster and creates enemies
     ballCollision(sprite: any, endGameCallback: Function, ballCollisionCallback: Function) {
@@ -47,9 +43,6 @@ class Goal {
             }
         }
         return projectiles
-    }
-
-    public setup() {
     }
 
     public draw() {

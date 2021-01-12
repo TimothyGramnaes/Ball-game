@@ -1,7 +1,5 @@
 class StartScreen {
     private startGameCallback: Function
-
-   
     private startGameImg: any
 
     constructor(startGameCallback: Function) {
@@ -10,10 +8,8 @@ class StartScreen {
         this.startGameImg.addImage(startGameImg);
     }
 
-    
-    
     public update(gameState: GameState) {
-        if(gameState === 'Start'){
+        if (gameState === 'Start') {
             if (keyIsDown(32)) {
                 this.startGameCallback();
             }
@@ -21,6 +17,6 @@ class StartScreen {
     }
 
     public draw() {
-        drawSprite(this.startGameImg);  
+        drawSprite(this.startGameImg);
     }
 }  

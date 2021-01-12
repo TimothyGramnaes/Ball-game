@@ -24,7 +24,6 @@ class GameController {
             this.ball.ball.setSpeed(0);
             this.goal.sprite.setSpeed(0);
         } else {
-            this.paddle.update();
             this.timer.update()
             this.ball.bounceWalls(this.walls.leftWall);
             this.ball.bounceWalls(this.walls.topWall);
@@ -33,7 +32,6 @@ class GameController {
 
             //Bounce ball and paddle
             this.ball.bounce(this.paddle.paddle)
-            this.paddle.update();
 
             // Bounce goal with walls
             this.goal.bounce(this.walls.leftWall);

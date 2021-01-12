@@ -2,8 +2,6 @@
     paddle: any
     positionX: number
     positionY: number
-    //MAX_SPEED: number
-
     health1: any
     health2: any
     health3: any
@@ -14,9 +12,7 @@
         this.paddle = createSprite(this.positionX, this.positionY)
         this.paddle.setCollider('circle', 0, 0, 38)
         this.paddle.addImage(imagePaddle)
-        
         this.paddle.immovable = true;
-
         this.health1 = createSprite(width - 120, 50)
         this.health2 = createSprite(width - 85, 50)
         this.health3 = createSprite(width - 50, 50)
@@ -32,11 +28,6 @@
         drawSprite(this.health1)
         drawSprite(this.health2)
         drawSprite(this.health3)
-    }
-
-    
-    update() {
-        
     }
 
 }
