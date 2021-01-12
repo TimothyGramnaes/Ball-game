@@ -8,7 +8,7 @@ class Goal {
             
             this.sprite = createSprite(width / 2, height / 2, 50, 50);
             this.sprite.setCollider('circle', 0, 0, 105)
-            this.speed = 8;
+            this.speed = 10;
             this.sprite.setSpeed(this.speed, Math.random() * 360);
             this.sprite.addImage(snowBall);  
         }
@@ -38,9 +38,9 @@ class Goal {
             // Creates enemy projectiles after impact with the ball      
 
              // Goal becomes faster after impact with the ball
-            this.sprite.setSpeed(this.speed += 1)
+            this.sprite.setSpeed(this.speed += .5)
 
-            if(this.sprite.scale < 0.1){
+            if(this.sprite.scale < 0.2){
                 endGameCallback(true);
                 //endGameCallback(false)
                 this.sprite.remove() 
