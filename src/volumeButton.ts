@@ -6,7 +6,7 @@ class volumeButton {
     constructor() {
         this.prevIsDownP = false; 
 
-        this.currentVolumeIcon = createSprite(width / 2, 40, 30, 30);
+        this.currentVolumeIcon = createSprite(35, height - 50, 30, 30);
         this.currentVolumeIcon.addImage(volumeUp)
     }
 
