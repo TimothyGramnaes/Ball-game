@@ -1,12 +1,13 @@
 
 
 interface ISound {
+    backgroundMusic: p5.SoundFile,
     goalCollide: p5.SoundFile,
     projectileCollide: p5.SoundFile,
-    backgroundMusic: p5.SoundFile
-    gameOverMusic: p5.SoundFile
-    ballCollide: p5.SoundFile
-    projectileCollect: p5.SoundFile
+    ballCollide: p5.SoundFile,
+    projectileCollect: p5.SoundFile,
+    applause: p5.SoundFile,
+    gameOver: p5.SoundFile,
 }
 
 
@@ -68,12 +69,14 @@ function preload() {
     dieImage = loadImage('./assets/images/die.png')
 
     sounds = {
-        goalCollide: loadSound('./assets/music/goalcrash.mp3'),
-        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
         backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
-        gameOverMusic: loadSound('./assets/music/gameover.mp3'),
-        ballCollide: loadSound('./assets/music/ballcollision.mp3'),
-        projectileCollect: loadSound('./assets/music/score.wav')
+        goalCollide: loadSound('./assets/music/goalcrash.mp3'),
+        applause: loadSound('./assets/music/applause.wav'),
+        gameOver: loadSound('./assets/music/oohNoo.wav'),
+        
+        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
+        ballCollide: loadSound('./assets/music/ballonWalls.wav'),
+        projectileCollect: loadSound('./assets/music/ballOnConfetti.wav'),
     }
 
 
@@ -98,13 +101,12 @@ function setup() {
     game = new TheGame();
     textSize(40)
 
-    noCursor()
-
-    sounds.backgroundMusic.pause();
+    noCursor();
+    
+    (window as any).getAudioContext().suspend();
+    sounds.backgroundMusic.play();
     sounds.backgroundMusic.setVolume(.08);
     sounds.backgroundMusic.setLoop(true)
-
-
 }
 
 // /**
@@ -123,4 +125,8 @@ function draw() {
 //  */
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+}
+
+function keyPressed() {
+    userStartAudio(); 
 }
