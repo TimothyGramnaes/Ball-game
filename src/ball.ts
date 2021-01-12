@@ -1,5 +1,5 @@
 class Ball {
-    private ball: any;
+    public ball: any;
     private radius: number;
     private speed: number;
 
