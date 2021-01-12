@@ -24,8 +24,10 @@ class TheGame {
     private endGame = (isWon: boolean) => {
         if(isWon){
             this.gameState = 'GameWon'
+            sounds.applause.play()
         }else {
             this.gameState = 'GameOver';
+            sounds.gameOver.play()
         }
     }
 
