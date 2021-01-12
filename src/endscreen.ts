@@ -6,6 +6,8 @@ class EndScreen {
         this.restartGameCallback = restartGameCallback;
         this.playAgain = createSprite(width / 2, height / 2, 100, 100);
         this.playAgain.addImage(playAgain);
+        playAgain.resize(550,400);
+
     }
 
     public update(gameState: GameState) {
