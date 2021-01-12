@@ -8,7 +8,7 @@ interface ISound {
     projectileCollect: p5.SoundFile,
     applause: p5.SoundFile,
     gameOver: p5.SoundFile,
-    ballOnWalls: p5.SoundFile, 
+    // ballOnWalls: p5.SoundFile, 
 }
 
 
@@ -72,12 +72,13 @@ function preload() {
     sounds = {
         backgroundMusic: loadSound('./assets/music/jazzy.mp3'),
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),
-        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
-        ballCollide: loadSound('./assets/music/ballcollision.mp3'),
         applause: loadSound('./assets/music/applause.wav'),
         gameOver: loadSound('./assets/music/oohNoo.wav'),
+        
+        projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
+        ballCollide: loadSound('./assets/music/ballonWalls.wav'),
         projectileCollect: loadSound('./assets/music/ballOnConfetti.wav'),
-        ballOnWalls: loadSound('./assets/music/ballonWalls.wav'), 
+        // ballOnWalls: loadSound('./assets/music/ballonWalls.wav'), 
     }
 
 
