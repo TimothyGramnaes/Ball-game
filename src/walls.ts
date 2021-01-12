@@ -28,9 +28,9 @@ class Walls {
 
     public draw() {
         drawSprite(this.topWall);
+        drawSprite(this.bottomWall);  
         drawSprite(this.rightWall);        
         drawSprite(this.leftWall);
-        drawSprite(this.bottomWall);  
     }
     
 }
