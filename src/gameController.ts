@@ -10,6 +10,7 @@ class GameController {
     //private gameOver: boolean;
     public walls: Walls;
     private timer: Timer;
+
     constructor() {  
         this.ball = new Ball();
         this.walls = new Walls();
@@ -19,9 +20,6 @@ class GameController {
         this.timer = new Timer();
         this.volumeButton = new volumeButton();
     }
-
-
-  
 
     public update(gameState: GameState, endGameCallback: Function) {
        
@@ -67,7 +65,7 @@ class GameController {
                 //projectile.rotation -= 2
             }
             this.timer.update();
-            
+            this.volumeButton.update();
             
             for(const projectile of this.projectiles){
                 projectile.update();

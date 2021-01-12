@@ -4,26 +4,32 @@ class volumeButton {
     private volumeUp: any
     private volumeOff: any
 
+    private currentVolumeIcon: any
+
     constructor() {
         this.prevIsDownP = false; 
+        this.currentVolumeIcon = createSprite(width / 2, 40, 40, 40);
+        this.currentVolumeIcon = this.volumeUp || this.volumeOff
 
-        this.volumeUp = createSprite(width / 1.1, 40, 50, 50);
-        this.volumeUp.addImage(volumeUp)
+        // this.volumeUp.addImage(volumeUp)
 
-        this.volumeOff = createSprite(width / 1.4, 40, 50, 50); 
-        this.volumeOff.addImage(volumeOff)
+        // this.volumeOff = createSprite(width / 1.4, 40, 40, 40); 
+        // this.volumeOff.addImage(volumeOff)
     }
 
     public update() {
-        
-        let muteKeyWasPressed = !this.prevIsDownP && keyIsDown(80) 
+
+        // if previous P button hasen't been klicked and P button is pressed do this: 
+                
+        let muteKeyWasPressed = !this.prevIsDownP && keyIsDown(80) || keyIsDown(32)
         if (muteKeyWasPressed) {
-            if (sounds.backgroundMusic.isPaused()) {
-                sounds.backgroundMusic.play()
-                this.volumeUp()
-            } else {
+            if (sounds.backgroundMusic.isPlaying()) {
                 sounds.backgroundMusic.pause()
-                this.volumeOff()
+                // this.currentVolumeIcon = volumeUp
+                
+            } else {
+                sounds.backgroundMusic.play()
+                // this.currentVolumeIcon = volumeOff
             }
         } 
         this.prevIsDownP = keyIsDown(80) 
@@ -33,8 +39,7 @@ class volumeButton {
     }
 
     public draw() {
-        drawSprite(this.volumeUp)
-        drawSprite(this.volumeOff)
+        drawSprite(this.currentVolumeIcon)
     }
 
 }

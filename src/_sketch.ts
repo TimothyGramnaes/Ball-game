@@ -52,7 +52,6 @@ function preload() {
     startGameImg = loadImage('./assets/images/startthegame.png')
     playAgain = loadImage('./assets/images/playagain.png')
 
-
     sounds = {
         goalCollide: loadSound('./assets/music/goalcrash.mp3'),
         projectileCollide: loadSound('./assets/music/ballcollision.mp3'),
@@ -80,10 +79,8 @@ function setup() {
     frameRate(60);    
     game = new TheGame();
     textSize(40)
-  
-    // volume_up volume_off material icons
 
-    sounds.backgroundMusic.play();
+    sounds.backgroundMusic.pause();
     sounds.backgroundMusic.setVolume(.08);
     sounds.backgroundMusic.setLoop(true)
 }
