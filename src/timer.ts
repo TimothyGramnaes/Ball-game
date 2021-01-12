@@ -1,9 +1,9 @@
 
 class Timer {
-    millisecs: number;
-    seconds: number;
-    minutes: number;
-    start: boolean;
+    private millisecs: number;
+    private seconds: number;
+    private minutes: number;
+    private start: boolean;
 
     constructor() {
         this.millisecs = 0;

@@ -1,9 +1,9 @@
 class Ball {
         
     ball: any
-    radius: any
-    position: any
-    speed: number
+    private radius: any
+    private position: any
+    private speed: number
 
             
     constructor() {
@@ -34,12 +34,6 @@ class Ball {
         if(this.ball.bounce(sprite)) {
             sounds.ballCollide.play();
         }
-         
-        
-        
-
-
-
     }
 
     public update() {

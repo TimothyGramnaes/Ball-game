@@ -10,7 +10,10 @@ class TheGame {
         this.gameState = 'Start';
         this.startScreen = new StartScreen(this.startGame);
         this.endScreen = new EndScreen(this.restartGame);
-        this.gameController = new GameController();    
+        this.gameController = new GameController();  
+        if(localStorage.getItem('HighScore') === null) {
+            localStorage.setItem('HighScore', '0')
+        }  
     }
 
 
