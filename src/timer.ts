@@ -1,8 +1,8 @@
 
 class Timer {
-    private millisecs: number;
-    private seconds: number;
-    private minutes: number;
+    millisecs: number;
+    seconds: number;
+    minutes: number;
     private start: boolean;
 
     constructor() {
