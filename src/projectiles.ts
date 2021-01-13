@@ -11,14 +11,17 @@ class Projectile {
         conf1.resize(0, 40);
         conf2.resize(0, 40);
         conf3.resize(0, 40);
+        conf4.resize(0, 40);
 
-        this.conf = Math.floor(Math.random() * 3) +1;
+        this.conf = Math.floor(Math.random() * 4) +1;
         if (this.conf == 1) {
             this.sprite.addImage(conf1);            
         } if (this.conf == 2) {
             this.sprite.addImage(conf2);             
         } if (this.conf == 3) {
             this.sprite.addImage(conf3); 
+        } if (this.conf == 4) {
+            this.sprite.addImage(conf4);
         }
     }
 

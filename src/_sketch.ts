@@ -29,6 +29,7 @@ let dieImage: p5.Image;
 let conf1: p5.Image;
 let conf2: p5.Image;
 let conf3: p5.Image;
+let conf4: p5.Image;
 let sounds: ISound;
 
 
@@ -54,6 +55,7 @@ function preload() {
     conf1 = loadImage('./assets/images/conf2.png')
     conf2 = loadImage('./assets/images/conf3.png')
     conf3 = loadImage('./assets/images/conf4.png')
+    conf4 = loadImage('./assets/images/conf1.png')
     volumeUp = loadImage('./assets/images/volume_up.png')
     volumeOff = loadImage('./assets/images/volume_off.png')
 

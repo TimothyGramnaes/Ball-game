@@ -24,6 +24,7 @@ class Goal {
 
     // Goal collides with the ball, shrinks, gets faster and creates enemies
     ballCollision(sprite: any, endGameCallback: Function, ballCollisionCallback: Function) {
+        // Creates enemy projectiles after impact with the ball      
         let projectiles: Projectile[] = []
         if(this.sprite.bounce(sprite)){
             projectiles.push(new Projectile(this))
@@ -35,14 +36,13 @@ class Goal {
             sounds.goalCollide.play();
             ballCollisionCallback();
 
-            // Creates enemy projectiles after impact with the ball      
 
              // Goal becomes faster after impact with the ball
             this.sprite.setSpeed(this.speed += .5)
 
             if(this.sprite.scale < 0.2){
                 endGameCallback(true);
-                //endGameCallback(false)
+            
                 this.sprite.remove() 
             }
         }
