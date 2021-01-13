@@ -68,9 +68,8 @@ class GameController {
             text('Score:', width - 135, 90);
             textSize(18)
             text('HigScore:', width - 135, 120);
-            text(localStorage.getItem('HighScore'), width - 50, 120);
+            text(localStorage.getItem('HighScore') || '', width - 50, 120);
             for(const projectile of this.projectiles){
-
                 projectile.update();
             }
         }
@@ -112,7 +111,6 @@ class GameController {
                 localStorage.setItem('HighScore', this.score.toString())
             }
             this.timer.drawWon(this.score);   
-
         }
     }
 }

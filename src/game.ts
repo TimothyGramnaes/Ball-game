@@ -13,8 +13,7 @@ class TheGame {
         this.gameController = new GameController();  
         if(localStorage.getItem('HighScore') === null) {
             localStorage.setItem('HighScore', '0')
-        }  
-
+        }        
     }
 
     private startGame = () => {
