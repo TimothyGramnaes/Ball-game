@@ -5,6 +5,7 @@
   "scripts": {
     "start": "run-p compile serve",
     "compile": "tsc --watch",
+    "build": "tsc",
     "serve": "live-server --watch=index.html,build --port=5500 --wait=100"
   },
   "devDependencies": {
