@@ -4,23 +4,14 @@ Game made as a group-assignment in a Javascript-course
 
 Made with Typescript, p5-js and p5-play
 
-Made by: Me, [Mia](https://github.com/miaherman), [Mikaela](https://github.com/miaherman), [Oliver](https://github.com/Browbeans),
+Made by: Me, [Mia](https://github.com/miaherman), [Mikaela](https://github.com/MikaelaAnd), [Oliver](https://github.com/Browbeans),
 [Felicia](https://github.com/feliciavonbraun) and [Amanda](https://github.com/AmandaStahlberg)
 
+When starting the project type "npm i" in terminal to install the modules necessarry.
 
-
+Then type "npm start" to start the project.
 
 Uppgiftsbeskrivning:
-# Slutprojektet
-Välkommen till den förinställda kodbasen för slutprojektet.
-Se filen `./src/sketch.ts` för hur ni ska börja skriva er kod!
-
-Kom ihåg att använda git!
-
-## Dokument & Artifakter
-All dokument skall finnas i projektet som faktiska filer vid inlämningen. Det finns en mapp `./documents` som alla dokumenten skall sparas i.
-
-Gå in i mappen och läs vidare där!
 
 ## Utveckling
 ### Installation
