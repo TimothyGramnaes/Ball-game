@@ -1,3 +1,16 @@
+Play demo [here!](https://balla-ur-online.netlify.app/)
+
+Game made as a group-assignment in a Javascript-course
+
+Made with Typescript, p5-js and p5-play
+
+Made by: Me, [Mia](https://github.com/miaherman), [Mikaela](https://github.com/miaherman), [Oliver](https://github.com/Browbeans),
+[Felicia](https://github.com/feliciavonbraun) and [Amanda](https://github.com/AmandaStahlberg)
+
+
+
+
+Uppgiftsbeskrivning:
 # Slutprojektet
 Välkommen till den förinställda kodbasen för slutprojektet.
 Se filen `./src/sketch.ts` för hur ni ska börja skriva er kod!
@@ -30,9 +43,4 @@ Ett nytt fönster kommer att öppnas som behöver användas för att få koden a
 ### Potentiella problem
 Versionen av p5.js är 1.1.9 medan senaste version av typescript endast är uppdaterad till 0.9.1. Detta skulle kunna orsaka problem men framför allt kan det vara så att ni hittar något i p5's dokumention som inte finns tillgängligt i detta projektet.
 
-Typings för de globala variablerna relaterat till p5.sound fungerar tyvärr inte - exempel finns för hur ni kan kringå detta.
-
-## TODO
-Lägg till ytterliggare information som är specifikt för ert projekt!
-
-**LYCKA TILL!**
+Typings för de globala variablerna relaterat till p5.sound fungerar tyvärr inte - exempel finns för hur ni kan kringå detta."
