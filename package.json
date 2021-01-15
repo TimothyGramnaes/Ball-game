@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "description": "Project to quickly get something working in p5.js and typescript",
   "scripts": {
-    "start": "run-p compile serve",
-    "compile": "tsc --watch",
+    "start": "run-p build:watch serve",
+    "build:watch": "tsc --watch",
+    "build": "tsc",
     "serve": "live-server --watch=index.html,build --port=5500 --wait=100"
   },
   "devDependencies": {
