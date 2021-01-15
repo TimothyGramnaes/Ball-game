@@ -1,6 +1,6 @@
 class Goal {  
-    sprite: any 
-    speed: number
+    public sprite: any 
+    private speed: number
         constructor() {
             this.speed = 10;          
             this.sprite = createSprite(width / 2, height / 2, 50, 50);
