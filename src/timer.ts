@@ -1,8 +1,8 @@
 
 class Timer {
-    millisecs: number;
-    seconds: number;
-    minutes: number;
+    private millisecs: number;
+    private seconds: number;
+    private minutes: number;
     private start: boolean;
 
     constructor() {
@@ -12,11 +12,11 @@ class Timer {
         this.start = true;
     }
 
-    update() {
+    public update() {
+        // Starts counter upon game start
         if(this.start){
             if (int(millis()/100)  % 10 != this.millisecs){
-                this.millisecs++;
-                
+                this.millisecs++;                
             }
             if (this.millisecs >= 10){
                 this.millisecs -= 10;
@@ -29,7 +29,8 @@ class Timer {
         }
     }
 
-    drawTimer() {  
+    // Displays timer
+    public drawTimer() {  
         textAlign(LEFT);
         fill(132,165,157);
         textSize(28);
@@ -39,7 +40,8 @@ class Timer {
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , 25, 80);
     }
     
-    drawWon(score: number) { 
+    // Displays winscreen when game is won
+    public drawWon(score: number) { 
         textAlign(CENTER);
         fill(132,165,157);
         textSize(60);
@@ -49,14 +51,12 @@ class Timer {
         textSize(40);
         text('Your time', width / 2, 120);
         text(nf(this.minutes, 2) + ":" + nf(this.seconds, 2) + "." + nf(this.millisecs, 1) , width / 2, 157);
-        text('Score:', width / 2 - 20, 200)
-        text(score, width / 2 + 70, 200)
-      
-
+        text('Score:', width / 2 - 20, 200);
+        text(score, width / 2 + 70, 200);
     }
 
-
-    drawLost() {
+    // Displays lose-screen upon loss
+    public drawLost() {
         textAlign(CENTER);
         fill(228, 137, 133);
         textSize(60);

@@ -9,31 +9,33 @@ class TheGame {
         this.gameState = 'Start';
         this.startScreen = new StartScreen(this.startGame);
         this.endScreen = new EndScreen(this.restartGame);
+        this.gameController = new GameController(); 
 
-        this.gameController = new GameController();  
         if(localStorage.getItem('HighScore') === null) {
-            localStorage.setItem('HighScore', '0')
+            localStorage.setItem('HighScore', '0');
         }        
     }
 
+    // Sets the gameState to running and calls the gameController
     private startGame = () => {
         this.gameState = 'Running';
         this.gameController = new GameController();
-        console.log(this)
     }
 
+    // Views win-screen upon win and lose-screen upon loss
     private endGame = (isWon: boolean) => {
         if (isWon) {
-            this.gameState = 'GameWon'
-            sounds.applause.play()
+            this.gameState = 'GameWon';
+            sounds.applause.play();
         }else {
             this.gameState = 'GameOver';
-            sounds.gameOver.play()
+            sounds.gameOver.play();
         }
     }
 
+    // Restarts the game and redraws everything
     private restartGame = () => {
-        this.gameState = 'Running'
+        this.gameState = 'Running';
         this.gameController = new GameController();
     }
 

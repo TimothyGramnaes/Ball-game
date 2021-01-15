@@ -1,8 +1,6 @@
 class StartScreen {
-    private startGameCallback: Function
-
-   
-    private startGameImg: any
+    private startGameCallback: Function;   
+    private startGameImg: any;
 
     constructor(startGameCallback: Function) {
         this.startGameCallback = startGameCallback;
@@ -10,10 +8,9 @@ class StartScreen {
         this.startGameImg.addImage(startGameImg);
         startGameImg.resize(600,700);
     }
-
-    
     
     public update(gameState: GameState) {
+        // Starts the game when space-key is pressed
         if(gameState === 'Start'){
             if (keyIsDown(32)) {
                 this.startGameCallback();

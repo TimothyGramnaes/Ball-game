@@ -5,29 +5,29 @@ class Ball {
     private speed: number;
 
     constructor() {
-        imageBall.resize(65, 65)
+        imageBall.resize(65, 65);
         this.radius = 30;
         this.ball = createSprite(200, 200, this.radius, this.radius);
         this.ball.setCollider('circle', 0, 0, 27);
-        this.ball.addImage(imageBall)
+        this.ball.addImage(imageBall);
         this.speed = 10;
-        this.ball.setSpeed(this.speed, Math.random() * 360)
+        this.ball.setSpeed(this.speed, Math.random() * 360);
     }
 
     public draw() {
         drawSprite(this.ball);
     }
 
-    bounce(sprite: any) {
-        this.ball.setSpeed(this.speed)
+    // Ball bounces of the paddel
+    public bounce(sprite: any) {
+        this.ball.setSpeed(this.speed);
         if (this.ball.bounce(sprite)) {
             sounds.ballCollide.play();
         }
     }
 
-
-
-    bounceWalls(sprite: any) {
+    // Ball bounces of the walls
+    public bounceWalls(sprite: any) {
         if (this.ball.bounce(sprite)) {
             sounds.ballCollide.play();
         }
